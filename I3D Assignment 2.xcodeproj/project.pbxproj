@@ -1,0 +1,205 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		599BE7F015635170003184D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 599BE7EF15635170003184D7 /* main.c */; };
+		599BE7F215635170003184D7 /* I3D_Assignment_2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 599BE7F115635170003184D7 /* I3D_Assignment_2.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		599BE7E915635170003184D7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				599BE7F215635170003184D7 /* I3D_Assignment_2.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		599BE7EB15635170003184D7 /* I3D Assignment 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "I3D Assignment 2"; sourceTree = BUILT_PRODUCTS_DIR; };
+		599BE7EF15635170003184D7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		599BE7F115635170003184D7 /* I3D_Assignment_2.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = I3D_Assignment_2.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		599BE7E815635170003184D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		599BE7E015635170003184D7 = {
+			isa = PBXGroup;
+			children = (
+				599BE7EE15635170003184D7 /* I3D Assignment 2 */,
+				599BE7EC15635170003184D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		599BE7EC15635170003184D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				599BE7EB15635170003184D7 /* I3D Assignment 2 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		599BE7EE15635170003184D7 /* I3D Assignment 2 */ = {
+			isa = PBXGroup;
+			children = (
+				599BE7EF15635170003184D7 /* main.c */,
+				599BE7F115635170003184D7 /* I3D_Assignment_2.1 */,
+			);
+			path = "I3D Assignment 2";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		599BE7EA15635170003184D7 /* I3D Assignment 2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 599BE7F515635170003184D7 /* Build configuration list for PBXNativeTarget "I3D Assignment 2" */;
+			buildPhases = (
+				599BE7E715635170003184D7 /* Sources */,
+				599BE7E815635170003184D7 /* Frameworks */,
+				599BE7E915635170003184D7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "I3D Assignment 2";
+			productName = "I3D Assignment 2";
+			productReference = 599BE7EB15635170003184D7 /* I3D Assignment 2 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		599BE7E215635170003184D7 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 599BE7E515635170003184D7 /* Build configuration list for PBXProject "I3D Assignment 2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 599BE7E015635170003184D7;
+			productRefGroup = 599BE7EC15635170003184D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				599BE7EA15635170003184D7 /* I3D Assignment 2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		599BE7E715635170003184D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				599BE7F015635170003184D7 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		599BE7F315635170003184D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		599BE7F415635170003184D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		599BE7F615635170003184D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		599BE7F715635170003184D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		599BE7E515635170003184D7 /* Build configuration list for PBXProject "I3D Assignment 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599BE7F315635170003184D7 /* Debug */,
+				599BE7F415635170003184D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		599BE7F515635170003184D7 /* Build configuration list for PBXNativeTarget "I3D Assignment 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599BE7F615635170003184D7 /* Debug */,
+				599BE7F715635170003184D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 599BE7E215635170003184D7 /* Project object */;
+}

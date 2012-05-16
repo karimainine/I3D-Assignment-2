@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		599BE7F015635170003184D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 599BE7EF15635170003184D7 /* main.c */; };
 		599BE7F215635170003184D7 /* I3D_Assignment_2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 599BE7F115635170003184D7 /* I3D_Assignment_2.1 */; };
+		59F16A971563521500F8ED81 /* boat.c in Sources */ = {isa = PBXBuildFile; fileRef = 59F16A811563521500F8ED81 /* boat.c */; };
+		59F16A981563521500F8ED81 /* camera.c in Sources */ = {isa = PBXBuildFile; fileRef = 59F16A831563521500F8ED81 /* camera.c */; };
+		59F16A991563521500F8ED81 /* controls.c in Sources */ = {isa = PBXBuildFile; fileRef = 59F16A851563521500F8ED81 /* controls.c */; };
+		59F16A9A1563521500F8ED81 /* keys.c in Sources */ = {isa = PBXBuildFile; fileRef = 59F16A891563521500F8ED81 /* keys.c */; };
+		59F16A9B1563521500F8ED81 /* light.c in Sources */ = {isa = PBXBuildFile; fileRef = 59F16A8B1563521500F8ED81 /* light.c */; };
+		59F16A9C1563521500F8ED81 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 59F16A8D1563521500F8ED81 /* Makefile */; };
+		59F16A9D1563521500F8ED81 /* obj.c in Sources */ = {isa = PBXBuildFile; fileRef = 59F16A8F1563521500F8ED81 /* obj.c */; };
+		59F16A9E1563521500F8ED81 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 59F16A931563521500F8ED81 /* utils.c */; };
+		59F16A9F1563521500F8ED81 /* waves.c in Sources */ = {isa = PBXBuildFile; fileRef = 59F16A951563521500F8ED81 /* waves.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +37,27 @@
 		599BE7EB15635170003184D7 /* I3D Assignment 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "I3D Assignment 2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		599BE7EF15635170003184D7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		599BE7F115635170003184D7 /* I3D_Assignment_2.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = I3D_Assignment_2.1; sourceTree = "<group>"; };
+		59F16A811563521500F8ED81 /* boat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = boat.c; sourceTree = "<group>"; };
+		59F16A821563521500F8ED81 /* boat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boat.h; sourceTree = "<group>"; };
+		59F16A831563521500F8ED81 /* camera.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = camera.c; sourceTree = "<group>"; };
+		59F16A841563521500F8ED81 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		59F16A851563521500F8ED81 /* controls.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = controls.c; sourceTree = "<group>"; };
+		59F16A861563521500F8ED81 /* controls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controls.h; sourceTree = "<group>"; };
+		59F16A871563521500F8ED81 /* galleon.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = galleon.obj; sourceTree = "<group>"; };
+		59F16A881563521500F8ED81 /* gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl.h; sourceTree = "<group>"; };
+		59F16A891563521500F8ED81 /* keys.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = keys.c; sourceTree = "<group>"; };
+		59F16A8A1563521500F8ED81 /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keys.h; sourceTree = "<group>"; };
+		59F16A8B1563521500F8ED81 /* light.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = light.c; sourceTree = "<group>"; };
+		59F16A8C1563521500F8ED81 /* light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = light.h; sourceTree = "<group>"; };
+		59F16A8D1563521500F8ED81 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		59F16A8F1563521500F8ED81 /* obj.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = obj.c; sourceTree = "<group>"; };
+		59F16A901563521500F8ED81 /* obj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = obj.h; sourceTree = "<group>"; };
+		59F16A911563521500F8ED81 /* uthash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uthash.h; sourceTree = "<group>"; };
+		59F16A921563521500F8ED81 /* Readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme; sourceTree = "<group>"; };
+		59F16A931563521500F8ED81 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		59F16A941563521500F8ED81 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		59F16A951563521500F8ED81 /* waves.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = waves.c; sourceTree = "<group>"; };
+		59F16A961563521500F8ED81 /* waves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waves.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +90,39 @@
 		599BE7EE15635170003184D7 /* I3D Assignment 2 */ = {
 			isa = PBXGroup;
 			children = (
+				59F16A811563521500F8ED81 /* boat.c */,
+				59F16A821563521500F8ED81 /* boat.h */,
+				59F16A831563521500F8ED81 /* camera.c */,
+				59F16A841563521500F8ED81 /* camera.h */,
+				59F16A851563521500F8ED81 /* controls.c */,
+				59F16A861563521500F8ED81 /* controls.h */,
+				59F16A871563521500F8ED81 /* galleon.obj */,
+				59F16A881563521500F8ED81 /* gl.h */,
+				59F16A891563521500F8ED81 /* keys.c */,
+				59F16A8A1563521500F8ED81 /* keys.h */,
+				59F16A8B1563521500F8ED81 /* light.c */,
+				59F16A8C1563521500F8ED81 /* light.h */,
+				59F16A8D1563521500F8ED81 /* Makefile */,
+				59F16A8E1563521500F8ED81 /* obj */,
+				59F16A921563521500F8ED81 /* Readme */,
+				59F16A931563521500F8ED81 /* utils.c */,
+				59F16A941563521500F8ED81 /* utils.h */,
+				59F16A951563521500F8ED81 /* waves.c */,
+				59F16A961563521500F8ED81 /* waves.h */,
 				599BE7EF15635170003184D7 /* main.c */,
 				599BE7F115635170003184D7 /* I3D_Assignment_2.1 */,
 			);
 			path = "I3D Assignment 2";
+			sourceTree = "<group>";
+		};
+		59F16A8E1563521500F8ED81 /* obj */ = {
+			isa = PBXGroup;
+			children = (
+				59F16A8F1563521500F8ED81 /* obj.c */,
+				59F16A901563521500F8ED81 /* obj.h */,
+				59F16A911563521500F8ED81 /* uthash.h */,
+			);
+			path = obj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +173,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				599BE7F015635170003184D7 /* main.c in Sources */,
+				59F16A971563521500F8ED81 /* boat.c in Sources */,
+				59F16A981563521500F8ED81 /* camera.c in Sources */,
+				59F16A991563521500F8ED81 /* controls.c in Sources */,
+				59F16A9A1563521500F8ED81 /* keys.c in Sources */,
+				59F16A9B1563521500F8ED81 /* light.c in Sources */,
+				59F16A9C1563521500F8ED81 /* Makefile in Sources */,
+				59F16A9D1563521500F8ED81 /* obj.c in Sources */,
+				59F16A9E1563521500F8ED81 /* utils.c in Sources */,
+				59F16A9F1563521500F8ED81 /* waves.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +266,7 @@
 				599BE7F715635170003184D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

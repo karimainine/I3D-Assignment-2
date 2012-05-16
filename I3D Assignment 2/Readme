@@ -1,0 +1,30 @@
+I3D Ass1 Sample Solution written by Jesse Archer
+
+To compile on linux type:
+make
+
+If you want to compile with optimisation flags, add the flag:
+opt=y
+
+If you want co compile with debugging enable, add the flag:
+dbg=y
+
+ie:
+
+make opt=y dbg=y
+
+
+
+To compile on windows, use the vcxproj file provided with Visual Studio 2010 express edition
+
+
+The program expects the files boat.obj and boat.mtl to be in the same folder
+
+
+Use arrow keys to control the boat as well as the following keys:
+
+Esc/q : quit
+w : toggle wireframe mode
+n : toggle normal visualisation
+a : toggle axis rendering
+l : toggle light between day/night

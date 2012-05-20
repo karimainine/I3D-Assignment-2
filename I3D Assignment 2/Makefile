@@ -20,14 +20,14 @@ endif
 
 # OS X
 ifeq ($(UNAME), Darwin)
-	LDFLAGS = -framework Carbon -framework OpenGL -framework GLUT -std=c99
+	LDFLAGS = -framework Carbon -framework OpenGL -framework GLUT -std=c99 -m32 -framework QuickTime
 endif
 
 $(EXE) : main.c
-	gcc -o $@ $< $(LDFLAGS) obj/obj.c boat.c camera.c controls.c keys.c light.c utils.c waves.c
+	gcc -o $@ $< $(LDFLAGS) obj/obj.c boat.c camera.c controls.c keys.c light.c utils.c waves.c texture_common.c texture_quicktime.c
 
 clean:
-	rm -rf *.o core assignment1 *.errs
+	rm -rf *.o core i3dAssign2 *.errs
 
 run:
 	./$(EXE)

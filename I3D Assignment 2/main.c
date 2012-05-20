@@ -8,6 +8,7 @@
 #include "boat.h"
 #include "keys.h"
 #include "controls.h"
+#include "texture.h"
 
 /* Some global variables */
 Camera camera;
@@ -17,6 +18,7 @@ Light nightLight;
 Boat boat;
 Keys keys;
 Controls controls;
+static GLuint texture;
 
 /* Draws a 3d axis at the given position, with the given length */
 void drawAxes(Vec3f pos, Vec3f len)
@@ -72,7 +74,16 @@ void display(void)
 		setupLight(&dayLight);
 	else
 		setupLight(&nightLight);
+	
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	drawGrid(&grid);
+	
+	glDisable(GL_BLEND);
+	
 	drawBoat(&boat);
 
 	if (controls.normals)
@@ -269,6 +280,9 @@ void init(void)
 	glEnable(GL_LIGHT0);
 	glEnable(GL_NORMALIZE);
 	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, 1);
+	
+	/* load Textures */
+	texture = texture_load("waterTexture.jpg");
 
 	reshape(640, 480);
 }

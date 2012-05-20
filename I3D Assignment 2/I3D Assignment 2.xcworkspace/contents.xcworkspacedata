@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:texture_common.c">
+   </FileRef>
+   <FileRef
+      location = "group:texture_gdk.c">
+   </FileRef>
+   <FileRef
+      location = "group:texture_quicktime.c">
+   </FileRef>
+   <FileRef
+      location = "group:texture.h">
+   </FileRef>
+   <FileRef
+      location = "group:boat.c">
+   </FileRef>
+   <FileRef
+      location = "group:boat.h">
+   </FileRef>
+   <FileRef
+      location = "group:camera.c">
+   </FileRef>
+   <FileRef
+      location = "group:camera.h">
+   </FileRef>
+   <FileRef
+      location = "group:controls.c">
+   </FileRef>
+   <FileRef
+      location = "group:controls.h">
+   </FileRef>
+   <FileRef
+      location = "group:galleon.obj">
+   </FileRef>
+   <FileRef
+      location = "group:gl.h">
+   </FileRef>
+   <FileRef
+      location = "group:I3D_Assignment_2.1">
+   </FileRef>
+   <FileRef
+      location = "group:i3dAssign2">
+   </FileRef>
+   <FileRef
+      location = "group:keys.c">
+   </FileRef>
+   <FileRef
+      location = "group:keys.h">
+   </FileRef>
+   <FileRef
+      location = "group:light.c">
+   </FileRef>
+   <FileRef
+      location = "group:light.h">
+   </FileRef>
+   <FileRef
+      location = "group:main.c">
+   </FileRef>
+   <FileRef
+      location = "group:Makefile">
+   </FileRef>
+   <Group
+      location = "group:obj"
+      name = "obj">
+      <FileRef
+         location = "group:obj.c">
+      </FileRef>
+      <FileRef
+         location = "group:obj.h">
+      </FileRef>
+      <FileRef
+         location = "group:uthash.h">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:Readme">
+   </FileRef>
+   <FileRef
+      location = "group:utils.c">
+   </FileRef>
+   <FileRef
+      location = "group:utils.h">
+   </FileRef>
+   <FileRef
+      location = "group:waves.c">
+   </FileRef>
+   <FileRef
+      location = "group:waves.h">
+   </FileRef>
+</Workspace>

@@ -106,7 +106,7 @@ void cleanupGrid(Grid *grid)
 void drawGrid(Grid *grid)
 {
 	/* Draw blue water with a white specular highlight */
-	static float diffuse[] = {0, 0.5, 1, 1};
+	static float diffuse[] = {0, 0.5, 1, 0.7};
 	static float ambient[] = {0, 0.5, 1, 1};
 	static float specular[] = {1, 1, 1, 1};
 	static float shininess = 100.0f;
@@ -119,10 +119,10 @@ void drawGrid(Grid *grid)
 	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diffuse);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, specular);
 	glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, shininess);
-
+	
 	/* Draw the grid, as triangles */
 	glBegin(GL_TRIANGLES);
-
+	
 	for (i = 0; i < grid->nIndices; i++)
 	{
 		/* A common cause of bugs/crashing when indexing
@@ -132,6 +132,10 @@ void drawGrid(Grid *grid)
 		
 		Vec3f v = grid->vertices[grid->indices[i]];
 		Vec3f n = grid->normals[grid->indices[i]];
+		
+		Vec3f lastV = grid->vertices[grid->indices[grid->nIndices - 1]];
+		
+		glTexCoord2f(v.x/lastV.x, v.z/lastV.z);
 		glNormal3f(n.x, n.y, n.z);
 		glVertex3f(v.x, v.y, v.z);
 		

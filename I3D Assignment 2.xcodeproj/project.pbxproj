@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59966D5C156A1C33005DF6BF /* seabed.c in Sources */ = {isa = PBXBuildFile; fileRef = 59966D5B156A1C33005DF6BF /* seabed.c */; };
 		599BE7F015635170003184D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 599BE7EF15635170003184D7 /* main.c */; };
 		599BE7F215635170003184D7 /* I3D_Assignment_2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 599BE7F115635170003184D7 /* I3D_Assignment_2.1 */; };
 		59F16A971563521500F8ED81 /* boat.c in Sources */ = {isa = PBXBuildFile; fileRef = 59F16A811563521500F8ED81 /* boat.c */; };
@@ -34,6 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		59966D59156A1C01005DF6BF /* seabed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = seabed.h; sourceTree = "<group>"; };
+		59966D5B156A1C33005DF6BF /* seabed.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = seabed.c; sourceTree = "<group>"; };
 		599BE7EB15635170003184D7 /* I3D Assignment 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "I3D Assignment 2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		599BE7EF15635170003184D7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		599BE7F115635170003184D7 /* I3D_Assignment_2.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = I3D_Assignment_2.1; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				59F16A961563521500F8ED81 /* waves.h */,
 				599BE7EF15635170003184D7 /* main.c */,
 				599BE7F115635170003184D7 /* I3D_Assignment_2.1 */,
+				59966D59156A1C01005DF6BF /* seabed.h */,
+				59966D5B156A1C33005DF6BF /* seabed.c */,
 			);
 			path = "I3D Assignment 2";
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				59F16A9D1563521500F8ED81 /* obj.c in Sources */,
 				59F16A9E1563521500F8ED81 /* utils.c in Sources */,
 				59F16A9F1563521500F8ED81 /* waves.c in Sources */,
+				59966D5C156A1C33005DF6BF /* seabed.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

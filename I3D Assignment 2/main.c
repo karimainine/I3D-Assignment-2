@@ -9,6 +9,7 @@
 #include "keys.h"
 #include "controls.h"
 #include "texture.h"
+#include "seabed.h"
 
 /* Some global variables */
 Camera camera;
@@ -80,9 +81,12 @@ void display(void)
 	
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	
 	drawGrid(&grid);
 	
 	glDisable(GL_BLEND);
+	
+	drawSeaBed();
 	
 	drawBoat(&boat);
 

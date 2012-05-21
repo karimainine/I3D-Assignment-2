@@ -106,7 +106,7 @@ void cleanupGrid(Grid *grid)
 void drawGrid(Grid *grid)
 {
 	/* Draw blue water with a white specular highlight */
-	static float diffuse[] = {0, 0.5, 1, 0.7};
+	static float diffuse[] = {0, 0.5, 1, 0.0};
 	static float ambient[] = {0, 0.5, 1, 1};
 	static float specular[] = {1, 1, 1, 1};
 	static float shininess = 100.0f;

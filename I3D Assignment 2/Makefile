@@ -24,7 +24,7 @@ ifeq ($(UNAME), Darwin)
 endif
 
 $(EXE) : main.c
-	gcc -o $@ $< $(LDFLAGS) obj/obj.c boat.c camera.c controls.c keys.c light.c utils.c waves.c texture_common.c texture_quicktime.c
+	gcc -o $@ $< $(LDFLAGS) obj/obj.c boat.c camera.c controls.c keys.c light.c utils.c waves.c texture_common.c texture_quicktime.c seabed.c
 
 clean:
 	rm -rf *.o core i3dAssign2 *.errs

@@ -34,6 +34,10 @@ extern "C" {
 	/* Draws a given grid */
 	void drawTerrain(Terrain *terrain);
 	
+	void calcTerrainNormals(Terrain* terrain);
+	
+	Vec3f getCrossProduct(Vec3f vector1, Vec3f vector2);
+	
 	/* Draws normal vectors of the grid as lines, for debugging
 	 purposes */
 	void drawTerrainNormals(Terrain *terrain, float size);

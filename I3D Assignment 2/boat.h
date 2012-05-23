@@ -30,10 +30,10 @@ typedef struct
 } Boat;
 
 /* Initialises the given boat with default values, and loads the obj file given by the filename */
-void initBoat(Boat *boat, const char *meshFilename);
+void initBoat(Boat *boat, const char *meshFilename, Vec3f);
 
 /* Draws the given boat */
-void drawBoat(Boat *boat);
+void drawBoat(Boat *boat, float*, float*);
 
 /* Updates the boat's position based on movement flags */
 void updateBoat(Boat *boat, bool up, bool down, bool left, bool right, float dt);

@@ -10,16 +10,88 @@
 #include "controls.h"
 #include "texture.h"
 #include "seabed.h"
+#include "screen.h"
 
 /* Some global variables */
 Camera camera;
 Grid grid;
 Light dayLight;
 Light nightLight;
-Boat boat;
+Boat boat1;
+Boat boat2;
 Keys keys;
 Controls controls;
-static GLuint texture;
+Screen screen;
+static GLuint waterTexture;
+
+void drawScene(){
+	if (controls.wireframe)
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	else
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	
+	if (controls.axes)
+		drawAxes(cVec3f(0, 0, 0), cVec3f(10, 10, 10));
+	
+	if (controls.day)
+		setupLight(&dayLight);
+	else
+		setupLight(&nightLight);
+	
+	float diffuse1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
+	float ambient1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
+	
+	float diffuse2 [] = { 0.0f, 1.0f, 0.0f, 1.0f };
+	float ambient2 [] = { 0.0f, 1.0f, 0.0f, 1.0f };
+	
+	drawBoat(&boat1, diffuse1, ambient1);
+	drawBoat(&boat2, diffuse2, ambient2);
+	
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, waterTexture);
+	
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	
+	drawGrid(&grid);
+	
+	glDisable(GL_BLEND);
+	
+	if (controls.normals)
+		drawNormals(&grid, 1);
+}
+
+void drawLeftScreen(){
+	/* Set the viewport to be rendered to */
+	glViewport(0, 0, screen.x/2, screen.y);
+	/* Clear previous projection (important, otherwise next step won't work) */
+	glLoadIdentity();
+	if (controls.mainCamera)
+	{
+		gluLookAt(boat1.pos.x, boat1.pos.y + 5.0, boat1.pos.z, boat2.pos.x, boat2.pos.y, boat2.pos.z, 0, 1, 0);
+	}
+	else
+	{
+		setupCamera(&camera);
+	}
+	drawScene();
+}
+
+void drawRightScreen(){
+	/* Set the viewport to be rendered to */
+	glViewport(screen.x/2, 0, screen.x/2, screen.y);
+	/* Clear previous projection (important, otherwise next step won't work) */
+	glLoadIdentity();
+	if (controls.mainCamera)
+	{
+		gluLookAt(boat2.pos.x, boat2.pos.y + 5.0, boat2.pos.z, boat1.pos.x, boat1.pos.y, boat1.pos.z, 0, 1, 0);
+	}
+	else
+	{
+		setupCamera(&camera);
+	}
+	drawScene();
+}
 
 /* Draws a 3d axis at the given position, with the given length */
 void drawAxes(Vec3f pos, Vec3f len)
@@ -51,68 +123,29 @@ void drawAxes(Vec3f pos, Vec3f len)
 void display(void)
 {
 	/* Put the scene into a default rendering state by resetting the modelview projection and clearing the colour and depth buffers */
-	glLoadIdentity();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	if (controls.wireframe)
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	else
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-	if (controls.mainCamera)
-	{
-		gluLookAt(0.0, 20.0, 20.0, boat.pos.x, boat.pos.y, boat.pos.z, 0, 1, 0);
-	}
-	else
-	{
-		setupCamera(&camera);
-	}
-
-	if (controls.axes)
-		drawAxes(cVec3f(0, 0, 0), cVec3f(10, 10, 10));
-
-	if (controls.day)
-		setupLight(&dayLight);
-	else
-		setupLight(&nightLight);
-	
-	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, texture);
-	
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	
-	drawGrid(&grid);
-	
-	glDisable(GL_BLEND);
-	
-	drawSeaBed();
-	
-	drawBoat(&boat);
-
-	if (controls.normals)
-		drawNormals(&grid, 1);
-
+	drawLeftScreen();
+	drawRightScreen();
 	/* Display result (swaps front and back buffers) */
 	glutSwapBuffers();
 }
 
 void reshape(int x, int y)
 {
+	screen.x = x;
+	screen.y = y;
 	float aspect = x / (float)y;
-
-	/* Set the viewport to be rendered to */
-	glViewport(0, 0, x, y);
-
+	aspect /= 2;
+	
 	/* We need to resize the projection, to do this we need to modify the projection matrix */
 	glMatrixMode(GL_PROJECTION);
-
+	
 	/* Clear previous projection (important, otherwise next step won't work) */
 	glLoadIdentity();
-
+	
 	/* Create new projection */
 	gluPerspective(camera.fov, aspect, camera.clipNear, camera.clipFar);
-
+	
 	/* Go back to modifying the modelview matrix */
 	glMatrixMode(GL_MODELVIEW);
 }
@@ -131,7 +164,8 @@ void idle(void)
 	t1 = t2;
 
 	updateGrid(&grid, dt);
-	updateBoat(&boat, keys.up, keys.down, keys.left, keys.right, dt);
+	updateBoat(&boat2, keys.up, keys.down, keys.left, keys.right, dt);
+	updateBoat(&boat1, keys.w, keys.s, keys.a, keys.d, dt);
 
 	glutPostRedisplay();
 }
@@ -172,6 +206,31 @@ void mouseDown(int button, int state, int x, int y)
 		camera.zooming = state == GLUT_DOWN;
 }
 
+void updateKey(int key, bool state)
+{
+	switch (key)
+	{
+		case 'w':
+			keys.w = state;
+			break;
+			
+		case 's':
+			keys.s = state;
+			break;
+			
+		case 'a':
+			keys.a = state;
+			break;
+			
+		case 'd':
+			keys.d = state;
+			break;
+			
+		default:
+			break;
+	}
+}
+
 void keyboard(unsigned char key, int x, int y)
 {
 	switch (key)
@@ -181,23 +240,23 @@ void keyboard(unsigned char key, int x, int y)
 			/* Exit if esc or q is pressed */
 			exit(0);
 
-		case 'w':
+		case 'W':
 			controls.wireframe = !controls.wireframe;
 			break;
 
-		case 'n':
+		case 'N':
 			controls.normals = !controls.normals;
 			break;
 
-		case 'a':
+		case 'A':
 			controls.axes = !controls.axes;
 			break;
 
-		case 'l':
+		case 'L':
 			controls.day = !controls.day;
 			break;
 
-		case 'e':
+		case 'E':
 			controls.mainCamera = !controls.mainCamera;
 			break;
 
@@ -212,45 +271,56 @@ void keyboard(unsigned char key, int x, int y)
 			cleanupGrid(&grid);
 			initGrid(&grid, grid.rows * 2, grid.cols * 2, grid.size);
 			break;
+			
+		case 'w':
+		case 'a':
+		case 's':
+		case 'd':
+			updateKey(key, true);
+			break;
 
 		default:
 			break;
 	}
 }
 
-void updateKey(int key, bool state)
+void updateKeySpecial(int key, bool state)
 {
 	switch (key)
 	{
 		case GLUT_KEY_UP:
 			keys.up = state;
 			break;
-
+			
 		case GLUT_KEY_DOWN:
 			keys.down = state;
 			break;
-
+			
 		case GLUT_KEY_LEFT:
 			keys.left = state;
 			break;
-
+			
 		case GLUT_KEY_RIGHT:
 			keys.right = state;
 			break;
-
+			
 		default:
 			break;
 	}
 }
 
+void keyUp(unsigned char key, int x, int y){
+	updateKey(key, false);
+}
+
 void keyboardSpecialDown(int key, int x, int y)
 {
-	updateKey(key, true);
+	updateKeySpecial(key, true);
 }
 
 void keyboardSpecialUp(int key, int x, int y)
 {
-	updateKey(key, false);
+	updateKeySpecial(key, false);
 }
 
 void init(void)
@@ -269,13 +339,12 @@ void init(void)
 	initLight(&dayLight, cVec4f(1.2, 1, -1.5, 0), cVec4f(0.4, 0.3, 0.2, 1), cVec4f(0.5, 0.5, 0.5, 1), cVec4f(1, 1, 1, 0), 128);
 	initLight(&nightLight, cVec4f(1, 1, -2, 0), cVec4f(0, 0, 0.2, 1), cVec4f(0, 0, 0.2, 1), cVec4f(1, 1, 1, 0), 128);
 
-	/* Load the boat */
-	initBoat(&boat, "galleon.obj");
+	/* Load the boat1 */
+	initBoat(&boat1, "galleon.obj", cVec3f(0, 0.3, -40));
+	initBoat(&boat2, "galleon.obj", cVec3f(0, 0.3, 40));
 
 	/* Set appropriate defaults */
 	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_BACK);
 	glShadeModel(GL_SMOOTH);
 	glClearColor(0, 0, 0, 0);
 
@@ -286,7 +355,7 @@ void init(void)
 	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, 1);
 	
 	/* load Textures */
-	texture = texture_load("waterTexture.jpg");
+	waterTexture = texture_load("textures/waterTexture.jpg");
 
 	reshape(640, 480);
 }
@@ -306,6 +375,7 @@ int main(int argc, char **argv)
 	glutPassiveMotionFunc(mouseMove);
 	glutMouseFunc(mouseDown);
 	glutKeyboardFunc(keyboard);
+	glutKeyboardUpFunc(keyUp);
 	glutSpecialFunc(keyboardSpecialDown);
 	glutSpecialUpFunc(keyboardSpecialUp);
 

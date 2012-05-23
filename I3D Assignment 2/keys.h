@@ -15,6 +15,10 @@ typedef struct
 	bool down;
 	bool left;
 	bool right;
+	bool a;
+	bool s;
+	bool d;
+	bool w;
 } Keys;
 
 

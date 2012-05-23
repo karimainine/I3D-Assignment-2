@@ -106,7 +106,7 @@ void cleanupGrid(Grid *grid)
 void drawGrid(Grid *grid)
 {
 	/* Draw blue water with a white specular highlight */
-	static float diffuse[] = {0, 0.5, 1, 0.0};
+	static float diffuse[] = {0, 0.5, 1, 0.5};
 	static float ambient[] = {0, 0.5, 1, 1};
 	static float specular[] = {1, 1, 1, 1};
 	static float shininess = 100.0f;
@@ -132,10 +132,10 @@ void drawGrid(Grid *grid)
 		
 		Vec3f v = grid->vertices[grid->indices[i]];
 		Vec3f n = grid->normals[grid->indices[i]];
+		Vec2f t = {(v.x/grid->size) - 0.5, (v.z/grid->size) - 0.5};
 		
-		Vec3f lastV = grid->vertices[grid->indices[grid->nIndices - 1]];
 		
-		glTexCoord2f(v.x/lastV.x, v.z/lastV.z);
+		glTexCoord2f(t.x, t.y);
 		glNormal3f(n.x, n.y, n.z);
 		glVertex3f(v.x, v.y, v.z);
 		

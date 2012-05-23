@@ -24,9 +24,9 @@
 
 /* Initialises the given boat with default values, and loads the obj
    file given by the filename */
-void initBoat(Boat *boat, const char *meshFilename)
+void initBoat(Boat *boat, const char *meshFilename, Vec3f position)
 {
-	boat->pos = cVec3f(0, 0.3, 0);
+	boat->pos = position;
 	boat->heading = 90; /* The gallon obj faces this direction initially */
 	boat->speed = 0;
 	boat->maxSpeed = 5.0;
@@ -57,11 +57,11 @@ void drawMesh(OBJMesh *mesh)
 }
 
 /* Draws the given boat */
-void drawBoat(Boat *boat)
+void drawBoat(Boat *boat, float* diffuse, float* ambient)
 {
 	/* Draw the boat as red to contrast with the waves */
-	static float diffuse[] = { 1.0f, 0.0f, 0.0f, 1.0f };
-	static float ambient[] = { 1.0f, 0.0f, 0.0f, 1.0f };
+	//static float diffuse[] = { 1.0f, 0.0f, 0.0f, 1.0f };
+	//static float ambient[] = { 1.0f, 0.0f, 0.0f, 1.0f };
 	static float specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	static float shininess = 256.0f;
 

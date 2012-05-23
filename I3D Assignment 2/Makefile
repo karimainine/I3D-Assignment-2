@@ -23,6 +23,8 @@ ifeq ($(UNAME), Darwin)
 	LDFLAGS = -framework Carbon -framework OpenGL -framework GLUT -std=c99 -m32 -framework QuickTime
 endif
 
+all: clean $(EXE) run
+
 $(EXE) : main.c
 	gcc -o $@ $< $(LDFLAGS) obj/obj.c boat.c camera.c controls.c keys.c light.c utils.c waves.c texture_common.c texture_quicktime.c seabed.c
 

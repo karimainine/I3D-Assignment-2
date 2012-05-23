@@ -7,5 +7,9 @@ void initKeys(Keys *keys)
 	keys->down = false;
 	keys->left = false;
 	keys->right = false;
+	keys->w = false;
+	keys->a = false;
+	keys->s = false;
+	keys->d = false;
 }
 

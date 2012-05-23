@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		594BEA54156CD06B008A7B4D /* png_loader.c in Sources */ = {isa = PBXBuildFile; fileRef = 594BEA4D156CD06B008A7B4D /* png_loader.c */; };
 		59881C30156C98DB00BA719F /* texture_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2A156C98DB00BA719F /* texture_common.c */; };
 		59881C31156C98DB00BA719F /* texture_gdk.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2B156C98DB00BA719F /* texture_gdk.c */; };
 		59881C32156C98DB00BA719F /* texture_quicktime.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2C156C98DB00BA719F /* texture_quicktime.c */; };
@@ -39,6 +40,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		594BEA4C156CD06B008A7B4D /* heightmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heightmap.png; sourceTree = "<group>"; };
+		594BEA4D156CD06B008A7B4D /* png_loader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = png_loader.c; sourceTree = "<group>"; };
+		594BEA4E156CD06B008A7B4D /* png_loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png_loader.h; sourceTree = "<group>"; };
+		594BEA50156CD06B008A7B4D /* testTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testTexture.png; sourceTree = "<group>"; };
+		594BEA51156CD06B008A7B4D /* waterTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waterTexture.jpg; sourceTree = "<group>"; };
+		594BEA52156CD06B008A7B4D /* testTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testTexture.png; path = textures/testTexture.png; sourceTree = "<group>"; };
+		594BEA53156CD06B008A7B4D /* waterTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waterTexture.jpg; path = textures/waterTexture.jpg; sourceTree = "<group>"; };
 		59881C2A156C98DB00BA719F /* texture_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_common.c; sourceTree = "<group>"; };
 		59881C2B156C98DB00BA719F /* texture_gdk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_gdk.c; sourceTree = "<group>"; };
 		59881C2C156C98DB00BA719F /* texture_quicktime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_quicktime.c; sourceTree = "<group>"; };
@@ -84,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		594BEA4F156CD06B008A7B4D /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				594BEA50156CD06B008A7B4D /* testTexture.png */,
+				594BEA51156CD06B008A7B4D /* waterTexture.jpg */,
+			);
+			path = textures;
+			sourceTree = "<group>";
+		};
 		599BE7E015635170003184D7 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +120,12 @@
 		599BE7EE15635170003184D7 /* I3D Assignment 2 */ = {
 			isa = PBXGroup;
 			children = (
+				594BEA4C156CD06B008A7B4D /* heightmap.png */,
+				594BEA4D156CD06B008A7B4D /* png_loader.c */,
+				594BEA4E156CD06B008A7B4D /* png_loader.h */,
+				594BEA4F156CD06B008A7B4D /* textures */,
+				594BEA52156CD06B008A7B4D /* testTexture.png */,
+				594BEA53156CD06B008A7B4D /* waterTexture.jpg */,
 				59881C2A156C98DB00BA719F /* texture_common.c */,
 				59881C2B156C98DB00BA719F /* texture_gdk.c */,
 				59881C2C156C98DB00BA719F /* texture_quicktime.c */,
@@ -208,6 +231,7 @@
 				59881C31156C98DB00BA719F /* texture_gdk.c in Sources */,
 				59881C32156C98DB00BA719F /* texture_quicktime.c in Sources */,
 				59881C35156C9C2900BA719F /* screen.c in Sources */,
+				594BEA54156CD06B008A7B4D /* png_loader.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

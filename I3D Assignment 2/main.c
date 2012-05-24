@@ -1,5 +1,16 @@
 #include <stdlib.h>
-#include "main.h"
+
+#include "gl.h"
+#include "camera.h"
+#include "waves.h"
+#include "utils.h"
+#include "light.h"
+#include "boat.h"
+#include "keys.h"
+#include "controls.h"
+#include "seabed.h"
+#include "screen.h"
+#include "texture.h"
 
 /* Some global variables */
 Camera camera;
@@ -14,10 +25,8 @@ Screen screen;
 Terrain terrain;
 static GLuint waterTexture;
 static GLuint terrainTexture;
-Sky sky;
 
 void drawScene(){
-	
 	float diffuse1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
 	float ambient1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
 	
@@ -28,7 +37,7 @@ void drawScene(){
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	else
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-		
+	
 	if (controls.axes)
 		drawAxes(cVec3f(0, 0, 0), cVec3f(10, 10, 10));
 	
@@ -37,16 +46,14 @@ void drawScene(){
 	else
 		setupLight(&nightLight);
 	
-	glEnable(GL_TEXTURE_2D);
-	
 	glBindTexture(GL_TEXTURE_2D, terrainTexture);
-	//drawTerrain(&terrain);
+	drawTerrain(&terrain);
 	
 	drawBoat(&boat1, diffuse1, ambient1);
 	drawBoat(&boat2, diffuse2, ambient2);
 	
-	glEnable(GL_BLEND);
 	glBindTexture(GL_TEXTURE_2D, waterTexture);
+	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	drawGrid(&grid);
 	glDisable(GL_BLEND);
@@ -65,7 +72,6 @@ void drawLeftScreen(){
 	if (controls.mainCamera)
 	{
 		gluLookAt(boat1.pos.x, boat1.pos.y + 5.0, boat1.pos.z, boat2.pos.x, boat2.pos.y, boat2.pos.z, 0, 1, 0);
-		//drawSky(&sky, &boat1);
 	}
 	else
 	{
@@ -82,7 +88,6 @@ void drawRightScreen(){
 	if (controls.mainCamera)
 	{
 		gluLookAt(boat2.pos.x, boat2.pos.y + 5.0, boat2.pos.z, boat1.pos.x, boat1.pos.y, boat1.pos.z, 0, 1, 0);
-		//drawSky(&sky, &boat2);
 	}
 	else
 	{
@@ -322,11 +327,9 @@ void keyboardSpecialUp(int key, int x, int y)
 }
 
 void init(void)
-{	
+{
 	/* Setup the camera in a default position */
 	initCamera(&camera);
-	
-	initSky(&sky, 1);
 
 	/* Setup key controls */
 	initKeys(&keys);
@@ -347,7 +350,7 @@ void init(void)
 	initBoat(&boat2, "galleon.obj", cVec3f(0, 0.3, 40));
 
 	/* Set appropriate defaults */
-	//glEnable(GL_DEPTH_TEST);
+	glEnable(GL_DEPTH_TEST);
 	glShadeModel(GL_SMOOTH);
 	glClearColor(0, 0, 0, 0);
 
@@ -356,12 +359,7 @@ void init(void)
 	glEnable(GL_LIGHT0);
 	glEnable(GL_NORMALIZE);
 	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, 1);
-	
-
-	/*glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);*/
+	glEnable(GL_TEXTURE_2D);
 	
 	/* load Textures */
 	waterTexture = texture_load("textures/waterTexture.jpg");

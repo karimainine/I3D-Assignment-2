@@ -60,12 +60,15 @@ void drawMesh(OBJMesh *mesh)
 void drawBoat(Boat *boat, float* diffuse, float* ambient)
 {
 	/* Draw the boat as red to contrast with the waves */
+	//static float diffuse[] = { 1.0f, 0.0f, 0.0f, 1.0f };
+	//static float ambient[] = { 1.0f, 0.0f, 0.0f, 1.0f };
 	static float specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	static float shininess = 256.0f;
 
 	glPushMatrix();
 
 	glTranslatef(boat->pos.x, boat->pos.y, boat->pos.z);
+	
 	
 	if (controls.axes)
 		drawAxes(cVec3f(0, 0, 0), cVec3f(10, 10, 10));
@@ -91,6 +94,9 @@ void drawBoat(Boat *boat, float* diffuse, float* ambient)
 
 	drawMesh(boat->mesh);
 	glPopMatrix();
+
+	glPopMatrix();
+
 	glPopMatrix();
 }
 

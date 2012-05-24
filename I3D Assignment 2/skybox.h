@@ -1,24 +1,20 @@
-#ifndef SKYBOX_H
-#define SKYBOX_H
+#ifndef SCREEN_H
+#define SCREEN_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 	
-#include "boat.h"
 #include "utils.h"
+
+	/* The Screen struct is used for creating a screen/window for each player */
+	typedef struct
+	{
+		int x;	
+		int y;		
+	} Screen;
 	
-	typedef struct{
-		float startX;
-		float startY;
-		float startZ;
-		float endX;
-		float endY;
-		float endZ;
-	}Sky;
-	
-	void drawSky(Sky*, Boat*);
-	void initSky(Sky*, int);
+	void drawScreen();
 	
 #ifdef __cplusplus
 }

@@ -117,6 +117,7 @@ void cleanupTerrain(Terrain *terrain)
 /* Draws a given grid */
 void drawTerrain(Terrain *terrain)
 {	
+	/* Draw blue water with a white specular highlight */
 	static float diffuse[] = {0, 1, 1, 1};
 	static float ambient[] = {0, 1, 1, 1};
 	static float specular[] = {1, 1, 1, 1};
@@ -131,28 +132,25 @@ void drawTerrain(Terrain *terrain)
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, specular);
 	glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, shininess);
 	
-	glPushMatrix();
-	/* Draw the terrain, as triangles */
-//	glBegin(GL_TRIANGLES);
-//	
-//	for (i = 0; i < terrain->nIndices; i++)
-//	{
-//		/* A common cause of bugs/crashing when indexing
-//		 vertices is accessing arrays out of bounds. assert
-//		 is a great way to catch this early */
-//		assert(terrain->indices[i] >= 0 && terrain->indices[i] < terrain->nVertices);
-//		
-//		Vec3f v = terrain->vertices[terrain->indices[i]];
-//		Vec3f n = terrain->normals[terrain->indices[i]];
-//		Vec2f t = {(v.x/terrain->size) - 0.5, (v.z/terrain->size) - 0.5};
-//		
-//		glTexCoord2f(t.x, t.y);
-//		glNormal3f(n.x, n.y, n.z);
-//		glVertex3f(v.x, v.y, v.z);		
-//	}
-//	glEnd();
+	/* Draw the grid, as triangles */
+	glBegin(GL_TRIANGLES);
 	
-	glPopMatrix();
+	for (i = 0; i < terrain->nIndices; i++)
+	{
+		/* A common cause of bugs/crashing when indexing
+		 vertices is accessing arrays out of bounds. assert
+		 is a great way to catch this early */
+		assert(terrain->indices[i] >= 0 && terrain->indices[i] < terrain->nVertices);
+		
+		Vec3f v = terrain->vertices[terrain->indices[i]];
+		Vec3f n = terrain->normals[terrain->indices[i]];
+		Vec2f t = {(v.x/terrain->size) - 0.5, (v.z/terrain->size) - 0.5};
+		
+		glTexCoord2f(t.x, t.y);
+		glNormal3f(n.x, n.y, n.z);
+		glVertex3f(v.x, v.y, v.z);		
+	}
+	glEnd();
 }
 
 void calcTerrainNormals(Terrain* terrain)

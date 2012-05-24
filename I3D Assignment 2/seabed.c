@@ -118,10 +118,10 @@ void cleanupTerrain(Terrain *terrain)
 void drawTerrain(Terrain *terrain)
 {	
 	/* Draw blue water with a white specular highlight */
-	static float diffuse[] = {0, 1, 1, 1};
-	static float ambient[] = {0, 1, 1, 1};
+	static float diffuse[] = {1, 1, 1, 1};
+	static float ambient[] = {1, 1, 1, 1};
 	static float specular[] = {1, 1, 1, 1};
-	static float shininess = 0.0f;
+	static float shininess = 256.0f;
 	
 	int i;
 	

@@ -25,9 +25,7 @@ extern "C" {
 	/* Initialises a 2d grid of the given size, divided into the given
 	 number of rows and cols */
 	void initTerrain(Terrain *terrain, int rows, int cols, float size, float height_offset);
-	
-	void calcTerrainHeights(Terrain *terrain, float height_offset);
-	
+		
 	/* Deletes all memory dynamically allocated by initGrid */
 	void cleanupTerrain(Terrain *terrain);
 			

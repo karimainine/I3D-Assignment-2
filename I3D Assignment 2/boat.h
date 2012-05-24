@@ -33,7 +33,7 @@ typedef struct
 void initBoat(Boat *boat, const char *meshFilename, Vec3f);
 
 /* Draws the given boat */
-void drawBoat(Boat *boat, float*, float*);
+void drawBoat(Boat *boat, float*);
 
 /* Updates the boat's position based on movement flags */
 void updateBoat(Boat *boat, bool up, bool down, bool left, bool right, float dt);

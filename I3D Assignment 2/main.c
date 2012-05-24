@@ -1,16 +1,6 @@
 #include <stdlib.h>
 
-#include "gl.h"
-#include "camera.h"
-#include "waves.h"
-#include "utils.h"
-#include "light.h"
-#include "boat.h"
-#include "keys.h"
-#include "controls.h"
-#include "seabed.h"
-#include "screen.h"
-#include "texture.h"
+#include "main.h"
 
 /* Some global variables */
 Camera camera;
@@ -27,10 +17,7 @@ static GLuint waterTexture;
 static GLuint terrainTexture;
 
 void drawScene(){
-	float diffuse1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
 	float ambient1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
-	
-	float diffuse2 [] = { 0.0f, 1.0f, 0.0f, 1.0f };
 	float ambient2 [] = { 0.0f, 1.0f, 0.0f, 1.0f };
 	
 	if (controls.wireframe)
@@ -49,8 +36,8 @@ void drawScene(){
 	glBindTexture(GL_TEXTURE_2D, terrainTexture);
 	drawTerrain(&terrain);
 	
-	drawBoat(&boat1, diffuse1, ambient1);
-	drawBoat(&boat2, diffuse2, ambient2);
+	drawBoat(&boat1, ambient1);
+	drawBoat(&boat2, ambient2);
 	
 	glBindTexture(GL_TEXTURE_2D, waterTexture);
 	glEnable(GL_BLEND);
@@ -328,6 +315,9 @@ void keyboardSpecialUp(int key, int x, int y)
 
 void init(void)
 {
+	/* Setup the terrain */
+	initTerrain(&terrain, 200, 200, 200, 20);
+	
 	/* Setup the camera in a default position */
 	initCamera(&camera);
 
@@ -337,9 +327,6 @@ void init(void)
 
 	/* Setup the grid */
 	initGrid(&grid, 200, 200, 200);
-	
-	/* Setup the terrain */
-	initTerrain(&terrain, 200, 200, 200, 20);
 
 	/* Setup the lights */
 	initLight(&dayLight, cVec4f(1.2, 1, -1.5, 0), cVec4f(0.4, 0.3, 0.2, 1), cVec4f(0.5, 0.5, 0.5, 1), cVec4f(1, 1, 1, 0), 128);

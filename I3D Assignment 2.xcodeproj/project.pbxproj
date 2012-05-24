@@ -40,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5920E302156E487500B76AB3 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		594BEA4C156CD06B008A7B4D /* heightmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heightmap.png; sourceTree = "<group>"; };
 		594BEA4D156CD06B008A7B4D /* png_loader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = png_loader.c; sourceTree = "<group>"; };
 		594BEA4E156CD06B008A7B4D /* png_loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png_loader.h; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 				59966D5B156A1C33005DF6BF /* seabed.c */,
 				59881C34156C9C2900BA719F /* screen.c */,
 				59881C36156C9C3900BA719F /* screen.h */,
+				5920E302156E487500B76AB3 /* main.h */,
 			);
 			path = "I3D Assignment 2";
 			sourceTree = "<group>";

@@ -57,10 +57,10 @@ void drawMesh(OBJMesh *mesh)
 }
 
 /* Draws the given boat */
-void drawBoat(Boat *boat, float* diffuse, float* ambient)
+void drawBoat(Boat *boat, float* ambient)
 {
 	/* Draw the boat as red to contrast with the waves */
-	//static float diffuse[] = { 1.0f, 0.0f, 0.0f, 1.0f };
+	static float diffuse[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	//static float ambient[] = { 1.0f, 0.0f, 0.0f, 1.0f };
 	static float specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	static float shininess = 256.0f;

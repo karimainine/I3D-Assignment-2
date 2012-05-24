@@ -1,5 +1,16 @@
 #include <stdlib.h>
-#include "main.h"
+
+#include "gl.h"
+#include "camera.h"
+#include "waves.h"
+#include "utils.h"
+#include "light.h"
+#include "boat.h"
+#include "keys.h"
+#include "controls.h"
+#include "texture.h"
+#include "seabed.h"
+#include "screen.h"
 
 /* Some global variables */
 Camera camera;

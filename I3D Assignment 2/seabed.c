@@ -13,9 +13,8 @@ static Image* terrainLoader;
  via updateTerrain() */
 void initTerrain(Terrain *terrain, int rows, int cols, float size, float height_offset)
 {
-	int initial_x, initial_z, last_x, last_z, initial_i, last_i;
 	int i, j, index, new_index, new_i, new_j;
-	float x, z, y;
+	float x, z;
 	
 	if (rows < 2)
 		rows = 2;
@@ -39,12 +38,6 @@ void initTerrain(Terrain *terrain, int rows, int cols, float size, float height_
 	 although the y value will when applying a wave effect to
 	 the grid */
 	index = 0;
-	
-	initial_x = -0.5*size;
-	initial_z = -0.5*size;
-	last_x = 0.5*size;
-	last_z = 0.5*size;
-	
 	for (i = 0; i < rows; i++)
 	{
 		x = i / (float)(rows - 1); /* range 0 to 1 */
@@ -55,17 +48,16 @@ void initTerrain(Terrain *terrain, int rows, int cols, float size, float height_
 			z = j / (float)(cols - 1); /* range 0 to 1 */
 			z = (z - 0.5) * size; /* range -.5 size to .5 size */
 			
-			//Y = (X-A)/(B-A) * (D-C) + C
-			new_i = (x - initial_x)/(last_x - initial_x) * terrainLoader->width;
-			new_j = (z - initial_z)/(last_z - initial_z) * terrainLoader->width;
-			new_index = (new_j*terrainLoader->width + new_i) * terrainLoader->channels;
-			y = (height_offset - 255) + terrainLoader->data[new_index];
+			/*new_j = j*terrainLoader->width/cols;
+			new_i = i*terrainLoader->width/rows;
+			
+			new_index = (new_j*terrainLoader->width + new_i) * terrainLoader->channels;*/
 			
 			vertices[index].x = x;
-			vertices[index].y = y;
+			vertices[index].y = 0;//height_offset - terrainLoader->data[new_index];
 			vertices[index].z = z;
 			
-			//printf("%f %f %f\n", vertices[index].x, vertices[index].y, vertices[index].z);
+			printf("%f %f %f\n", vertices[index].x, vertices[index].y, vertices[index].z);
 			index++;
 		}
 	}
@@ -98,7 +90,24 @@ void initTerrain(Terrain *terrain, int rows, int cols, float size, float height_
 	terrain->normals = normals;
 	terrain->indices = indices;
 	
-	calcTerrainNormals(terrain);
+	//calcTerrainHeights(terrain, height_offset);
+}
+
+void calcTerrainHeights(Terrain *terrain, float height_offset){
+	Vec3f v;
+	int i,j,k,index;
+	for (k = 0; k < terrain->nIndices; k++)
+	{
+		v = terrain->vertices[terrain->indices[k]];
+		i = v.x*terrainLoader->width/terrain->nVertices;
+		j = v.z*terrainLoader->width/terrain->nVertices;
+		index = (j*terrainLoader->width + i) * terrainLoader->channels;
+		terrain->vertices[k].y = terrainLoader->data[index];
+		
+		printf("width: %d Vertices: %d\n", terrainLoader->width, terrain->nVertices);
+		printf("%f %f %f\n", v.x, v.y, v.z);
+		printf("%d %d %d\n", i, j, index);
+	}
 }
 
 /* Deletes all memory dynamically allocated by initGrid */
@@ -147,69 +156,21 @@ void drawTerrain(Terrain *terrain)
 		Vec2f t = {(v.x/terrain->size) - 0.5, (v.z/terrain->size) - 0.5};
 		
 		glTexCoord2f(t.x, t.y);
-		glNormal3f(n.x, n.y, n.z);
-		glVertex3f(v.x, v.y, v.z);		
+		//glNormal3f(n.x, n.y, n.z);
+		glVertex3f(v.x, v.y, v.z);
+		
+		//printf("%f %f %f\n", v.x, v.y, v.z);
 	}
+	
 	glEnd();
 }
 
-void calcTerrainNormals(Terrain* terrain)
+/* Calculates the un-normalized normal vector of a sine function
+ given a position */
+Vec2f calcTerrainNormal(Image *heightmap, float x, float t)
 {
-	int i, j, index = 0;
-	
-	for(i=0; i<terrain->rows; i++){
-		for(j=0; j<terrain->cols; j++){
-			
-			//(i,j) -> (i)*cols+(j)
-			Vec3f vup = {0,0,0}, vdown = {0,0,0}, vleft = {0,0,0}, vright = {0,0,0};
-			
-			Vec3f v = terrain->vertices[(i)*terrain->cols+(j)];
-			
-			if(j<terrain->cols){
-				//(i, j+1)
-				vdown = terrain->vertices[(i)*terrain->cols+(j+1)];
-			}
-			
-			if(j>0){
-				//(i, j-1)
-				vup = terrain->vertices[(i)*terrain->cols+(j-1)];
-			}
-			
-			if(i<terrain->rows){
-				//(i+1, j)
-				vright = terrain->vertices[(i+1)*terrain->cols+(j)];
-			}
-			
-			if(i>0){
-				//(i-1, j)
-				vleft = terrain->vertices[(i-1)*terrain->cols+(j)];
-			}			
-			
-			Vec3f verticalVector = {vup.x - vdown.x, vup.y - vdown.y, vup.z - vdown.z};
-			Vec3f horizontalVector = {vright.x - vleft.x, vright.y - vleft.y, vright.z - vleft.z};
-			
-			Vec3f normal = getCrossProduct(verticalVector, horizontalVector);
-			
-			terrain->normals[index++] = normal;
-		}
-	}
-}
-
-Vec3f getCrossProduct(Vec3f a, Vec3f b){
-	Vec3f normal;
-	float magnitude;
-	
-	normal.x = (a.y*b.z) - (a.z*b.y);
-	normal.y = -((a.z*b.x) - (a.x*b.z));
-	normal.z = (a.x*b.y) - (a.y*b.x);
-	
-	/* Normalize */
-	magnitude = sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z);
-	normal.x /= magnitude;
-	normal.y /= magnitude;
-	normal.z /= magnitude;
-	
-	return normal;
+	Vec2f n = {0,0};
+	return n;
 }
 
 /* Draws normal vectors of the grid as lines, for debugging purposes */

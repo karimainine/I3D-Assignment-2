@@ -58,10 +58,8 @@ void drawScene(){
 	drawGrid(&grid);
 	glDisable(GL_BLEND);
 	
-	if (controls.normals){
+	if (controls.normals)
 		drawNormals(&grid, 1);
-		drawTerrainNormals(&terrain, 1);
-	}
 }
 
 void drawLeftScreen(){
@@ -339,7 +337,7 @@ void init(void)
 	initGrid(&grid, 200, 200, 200);
 	
 	/* Setup the terrain */
-	initTerrain(&terrain, 200, 200, 200, 20);
+	initTerrain(&terrain, 500, 500, 500, 20);
 
 	/* Setup the lights */
 	initLight(&dayLight, cVec4f(1.2, 1, -1.5, 0), cVec4f(0.4, 0.3, 0.2, 1), cVec4f(0.5, 0.5, 0.5, 1), cVec4f(1, 1, 1, 0), 128);
@@ -363,7 +361,7 @@ void init(void)
 	
 	/* load Textures */
 	waterTexture = texture_load("textures/waterTexture.jpg");
-	terrainTexture = texture_load("textures/underwater.jpg");
+	terrainTexture = texture_load("textures/testTexture.png");
 
 	reshape(640, 480);
 }

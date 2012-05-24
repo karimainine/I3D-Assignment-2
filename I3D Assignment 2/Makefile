@@ -9,7 +9,7 @@ EXE = i3dAssign2
 
 # Linux
 	ifeq ($(UNAME), Linux)
-	LDFLAGS = -lGL -lGLU -lglut -std=c99 -lm -lz
+	LDFLAGS = -lGL -lGLU -lglut -std=c99 -lm
 endif
 
 # Windows (cygwin)
@@ -20,13 +20,13 @@ endif
 
 # OS X
 ifeq ($(UNAME), Darwin)
-	LDFLAGS = -framework Carbon -framework OpenGL -framework GLUT -std=c99 -m32 -framework QuickTime -lz
+	LDFLAGS = -framework Carbon -framework OpenGL -framework GLUT -std=c99 -m32 -framework QuickTime
 endif
 
 all: clean $(EXE) run
 
 $(EXE) : main.c
-	gcc -o $@ $< $(LDFLAGS) obj/obj.c boat.c camera.c controls.c keys.c light.c utils.c waves.c texture_common.c texture_quicktime.c seabed.c png_loader.c
+	gcc -o $@ $< $(LDFLAGS) obj/obj.c boat.c camera.c controls.c keys.c light.c utils.c waves.c texture_common.c texture_quicktime.c seabed.c
 
 clean:
 	rm -rf *.o core i3dAssign2 *.errs

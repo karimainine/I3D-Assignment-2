@@ -1,6 +1,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <assert.h>
+
 #include "waves.h"
 #include "gl.h"
 
@@ -140,6 +141,7 @@ void drawGrid(Grid *grid)
 		
 		/* printf("%f %f %f\n", v.x, v.y, v.z); */
 	}
+
 	glEnd();
 }
 

@@ -27,18 +27,21 @@ void drawSky(Sky *sky, Boat *boat){
 	glPushMatrix();
 	glLoadIdentity();
 	
-	//gluLookAt(0, 0, 0, boat->pos.x, boat->pos.y, boat->pos.z, 0, 1, 0);
-	
 	// Enable/Disable features
 	glPushAttrib(GL_ENABLE_BIT);
 	glDisable(GL_DEPTH_TEST);
 	//glDisable(GL_LIGHTING);
 	glDisable(GL_BLEND);
 	
-	static float diffuse[] = {0, 1, 1, 1};
-	static float ambient[] = {0, 1, 1, 1};
+	//gluLookAt(0, 0, 0, pos.x, pos.y, pos.z, 0, 1, 0);
+	//glRotatef(boat->roll, 0, 0, -1);
+	//glRotatef(boat->pitch, 1, 0, 0);
+	//glRotatef(boat->heading, 0, 1, 0);
+	
+	static float diffuse[] = {1, 1, 1, 1};
+	static float ambient[] = {1, 1, 1, 1};
 	static float specular[] = {1, 1, 1, 1};
-	static float shininess = 0.0f;
+	static float shininess = 256.0f;
 	
 	/* Apply the material, this will interact with the light to
 	 produce the final colour */

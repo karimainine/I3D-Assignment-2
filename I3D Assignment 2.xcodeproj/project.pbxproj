@@ -11,7 +11,7 @@
 		59881C30156C98DB00BA719F /* texture_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2A156C98DB00BA719F /* texture_common.c */; };
 		59881C31156C98DB00BA719F /* texture_gdk.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2B156C98DB00BA719F /* texture_gdk.c */; };
 		59881C32156C98DB00BA719F /* texture_quicktime.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2C156C98DB00BA719F /* texture_quicktime.c */; };
-		59881C35156C9C2900BA719F /* screen.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C34156C9C2900BA719F /* screen.c */; };
+		59881C35156C9C2900BA719F /* skybox.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C34156C9C2900BA719F /* skybox.c */; };
 		59966D5C156A1C33005DF6BF /* seabed.c in Sources */ = {isa = PBXBuildFile; fileRef = 59966D5B156A1C33005DF6BF /* seabed.c */; };
 		599BE7F015635170003184D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 599BE7EF15635170003184D7 /* main.c */; };
 		599BE7F215635170003184D7 /* I3D_Assignment_2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 599BE7F115635170003184D7 /* I3D_Assignment_2.1 */; };
@@ -52,8 +52,8 @@
 		59881C2B156C98DB00BA719F /* texture_gdk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_gdk.c; sourceTree = "<group>"; };
 		59881C2C156C98DB00BA719F /* texture_quicktime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_quicktime.c; sourceTree = "<group>"; };
 		59881C2D156C98DB00BA719F /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
-		59881C34156C9C2900BA719F /* screen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = screen.c; sourceTree = "<group>"; };
-		59881C36156C9C3900BA719F /* screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = screen.h; sourceTree = "<group>"; };
+		59881C34156C9C2900BA719F /* skybox.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = skybox.c; sourceTree = "<group>"; };
+		59881C36156C9C3900BA719F /* skybox.h */ = {isa = PBXFileReference; fileEncoding = 4; path = skybox.h; sourceTree = "<group>"; };
 		59966D59156A1C01005DF6BF /* seabed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = seabed.h; sourceTree = "<group>"; };
 		59966D5B156A1C33005DF6BF /* seabed.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = seabed.c; sourceTree = "<group>"; };
 		599BE7EB15635170003184D7 /* I3D Assignment 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "I3D Assignment 2"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,8 +154,8 @@
 				599BE7F115635170003184D7 /* I3D_Assignment_2.1 */,
 				59966D59156A1C01005DF6BF /* seabed.h */,
 				59966D5B156A1C33005DF6BF /* seabed.c */,
-				59881C34156C9C2900BA719F /* screen.c */,
-				59881C36156C9C3900BA719F /* screen.h */,
+				59881C34156C9C2900BA719F /* skybox.c */,
+				59881C36156C9C3900BA719F /* skybox.h */,
 				5920E302156E487500B76AB3 /* main.h */,
 			);
 			path = "I3D Assignment 2";
@@ -232,7 +232,7 @@
 				59881C30156C98DB00BA719F /* texture_common.c in Sources */,
 				59881C31156C98DB00BA719F /* texture_gdk.c in Sources */,
 				59881C32156C98DB00BA719F /* texture_quicktime.c in Sources */,
-				59881C35156C9C2900BA719F /* screen.c in Sources */,
+				59881C35156C9C2900BA719F /* skybox.c in Sources */,
 				594BEA54156CD06B008A7B4D /* png_loader.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

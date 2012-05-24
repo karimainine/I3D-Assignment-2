@@ -5,7 +5,6 @@
 #include "controls.h"
 #include "waves.h"
 #include "gl.h"
-#include "obj/obj.h"
 
 #ifndef min
 #define min(a, b) (a <= b ? a : b)

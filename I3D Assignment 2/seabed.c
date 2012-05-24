@@ -13,7 +13,7 @@ static Image* terrainLoader;
  via updateTerrain() */
 void initTerrain(Terrain *terrain, int rows, int cols, float size, float height_offset)
 {
-	int initial_x, initial_z, last_x, last_z, initial_i, last_i;
+	int initial_x, initial_z, last_x, last_z;
 	int i, j, index, new_index, new_i, new_j;
 	float x, z, y;
 	
@@ -162,8 +162,6 @@ void calcTerrainNormals(Terrain* terrain)
 			
 			//(i,j) -> (i)*cols+(j)
 			Vec3f vup = {0,0,0}, vdown = {0,0,0}, vleft = {0,0,0}, vright = {0,0,0};
-			
-			Vec3f v = terrain->vertices[(i)*terrain->cols+(j)];
 			
 			if(j<terrain->cols){
 				//(i, j+1)

@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 #include "utils.h"
+#include "obj/obj.h"
 
 /* forward declare instead of #include "obj.h" */
 struct _OBJMesh;
@@ -37,6 +38,8 @@ void drawBoat(Boat *boat, float*);
 
 /* Updates the boat's position based on movement flags */
 void updateBoat(Boat *boat, bool up, bool down, bool left, bool right, float dt);
+	
+void drawMesh(OBJMesh *mesh);
 
 #ifdef __cplusplus
 }

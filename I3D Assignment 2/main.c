@@ -1,5 +1,4 @@
 #include <stdlib.h>
-
 #include "main.h"
 
 /* Some global variables */

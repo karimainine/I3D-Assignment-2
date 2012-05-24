@@ -16,6 +16,7 @@ extern "C" {
 #include "controls.h"
 #include "seabed.h"
 #include "texture.h"
+#include "skybox.h"
 	
 	typedef struct
 	{
@@ -23,10 +24,9 @@ extern "C" {
 		int y;		
 	} Screen;
 	
-	void drawScreen();
-	void drawScene();
-	void drawLeftScreen();
-	void drawRightScreen();
+	void drawScene(void);
+	void drawLeftScreen(void);
+	void drawRightScreen(void);
 	void drawAxes(Vec3f pos, Vec3f len);
 	void display(void);
 	void reshape(int x, int y);

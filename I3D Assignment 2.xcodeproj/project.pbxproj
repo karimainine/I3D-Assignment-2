@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		594BEA76156E414C008A7B4D /* png_loader.c in Sources */ = {isa = PBXBuildFile; fileRef = 594BEA75156E414C008A7B4D /* png_loader.c */; };
 		59881C30156C98DB00BA719F /* texture_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2A156C98DB00BA719F /* texture_common.c */; };
 		59881C31156C98DB00BA719F /* texture_gdk.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2B156C98DB00BA719F /* texture_gdk.c */; };
 		59881C32156C98DB00BA719F /* texture_quicktime.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2C156C98DB00BA719F /* texture_quicktime.c */; };
@@ -39,6 +40,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		594BEA73156E4054008A7B4D /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		594BEA75156E414C008A7B4D /* png_loader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = png_loader.c; sourceTree = "<group>"; };
+		594BEA77156E4179008A7B4D /* png_loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png_loader.h; sourceTree = "<group>"; };
 		59881C2A156C98DB00BA719F /* texture_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_common.c; sourceTree = "<group>"; };
 		59881C2B156C98DB00BA719F /* texture_gdk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_gdk.c; sourceTree = "<group>"; };
 		59881C2C156C98DB00BA719F /* texture_quicktime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_quicktime.c; sourceTree = "<group>"; };
@@ -132,6 +136,9 @@
 				59966D5B156A1C33005DF6BF /* seabed.c */,
 				59881C34156C9C2900BA719F /* screen.c */,
 				59881C36156C9C3900BA719F /* screen.h */,
+				594BEA73156E4054008A7B4D /* main.h */,
+				594BEA75156E414C008A7B4D /* png_loader.c */,
+				594BEA77156E4179008A7B4D /* png_loader.h */,
 			);
 			path = "I3D Assignment 2";
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 				59881C31156C98DB00BA719F /* texture_gdk.c in Sources */,
 				59881C32156C98DB00BA719F /* texture_quicktime.c in Sources */,
 				59881C35156C9C2900BA719F /* screen.c in Sources */,
+				594BEA76156E414C008A7B4D /* png_loader.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,9 @@
 #include "boat.h"
 #include "keys.h"
 #include "controls.h"
-#include "texture.h"
 #include "seabed.h"
 #include "screen.h"
+#include "texture.h"
 
 /* Some global variables */
 Camera camera;
@@ -22,9 +22,17 @@ Boat boat2;
 Keys keys;
 Controls controls;
 Screen screen;
+Terrain terrain;
 static GLuint waterTexture;
+static GLuint terrainTexture;
 
 void drawScene(){
+	float diffuse1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
+	float ambient1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
+	
+	float diffuse2 [] = { 0.0f, 1.0f, 0.0f, 1.0f };
+	float ambient2 [] = { 0.0f, 1.0f, 0.0f, 1.0f };
+	
 	if (controls.wireframe)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	else
@@ -38,23 +46,16 @@ void drawScene(){
 	else
 		setupLight(&nightLight);
 	
-	float diffuse1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
-	float ambient1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
-	
-	float diffuse2 [] = { 0.0f, 1.0f, 0.0f, 1.0f };
-	float ambient2 [] = { 0.0f, 1.0f, 0.0f, 1.0f };
+	glBindTexture(GL_TEXTURE_2D, terrainTexture);
+	drawTerrain(&terrain);
 	
 	drawBoat(&boat1, diffuse1, ambient1);
 	drawBoat(&boat2, diffuse2, ambient2);
 	
-	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, waterTexture);
-	
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	
 	drawGrid(&grid);
-	
 	glDisable(GL_BLEND);
 	
 	if (controls.normals)
@@ -334,6 +335,9 @@ void init(void)
 
 	/* Setup the grid */
 	initGrid(&grid, 200, 200, 200);
+	
+	/* Setup the terrain */
+	initTerrain(&terrain, 500, 500, 500, 20);
 
 	/* Setup the lights */
 	initLight(&dayLight, cVec4f(1.2, 1, -1.5, 0), cVec4f(0.4, 0.3, 0.2, 1), cVec4f(0.5, 0.5, 0.5, 1), cVec4f(1, 1, 1, 0), 128);
@@ -353,9 +357,11 @@ void init(void)
 	glEnable(GL_LIGHT0);
 	glEnable(GL_NORMALIZE);
 	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, 1);
+	glEnable(GL_TEXTURE_2D);
 	
 	/* load Textures */
 	waterTexture = texture_load("textures/waterTexture.jpg");
+	terrainTexture = texture_load("textures/testTexture.png");
 
 	reshape(640, 480);
 }

@@ -11,7 +11,7 @@
 		59881C30156C98DB00BA719F /* texture_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2A156C98DB00BA719F /* texture_common.c */; };
 		59881C31156C98DB00BA719F /* texture_gdk.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2B156C98DB00BA719F /* texture_gdk.c */; };
 		59881C32156C98DB00BA719F /* texture_quicktime.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2C156C98DB00BA719F /* texture_quicktime.c */; };
-		59881C35156C9C2900BA719F /* screen.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C34156C9C2900BA719F /* screen.c */; };
+		59881C35156C9C2900BA719F /* skybox.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C34156C9C2900BA719F /* skybox.c */; };
 		59966D5C156A1C33005DF6BF /* seabed.c in Sources */ = {isa = PBXBuildFile; fileRef = 59966D5B156A1C33005DF6BF /* seabed.c */; };
 		599BE7F015635170003184D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 599BE7EF15635170003184D7 /* main.c */; };
 		599BE7F215635170003184D7 /* I3D_Assignment_2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 599BE7F115635170003184D7 /* I3D_Assignment_2.1 */; };
@@ -44,15 +44,23 @@
 		594BEA4D156CD06B008A7B4D /* png_loader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = png_loader.c; sourceTree = "<group>"; };
 		594BEA4E156CD06B008A7B4D /* png_loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png_loader.h; sourceTree = "<group>"; };
 		594BEA50156CD06B008A7B4D /* testTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testTexture.png; sourceTree = "<group>"; };
-		594BEA51156CD06B008A7B4D /* waterTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waterTexture.jpg; sourceTree = "<group>"; };
 		594BEA52156CD06B008A7B4D /* testTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testTexture.png; path = textures/testTexture.png; sourceTree = "<group>"; };
-		594BEA53156CD06B008A7B4D /* waterTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waterTexture.jpg; path = textures/waterTexture.jpg; sourceTree = "<group>"; };
+		594BEA64156DEDF9008A7B4D /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		594BEA65156E2891008A7B4D /* back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpg; sourceTree = "<group>"; };
+		594BEA66156E2891008A7B4D /* bottom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bottom.jpg; sourceTree = "<group>"; };
+		594BEA67156E2891008A7B4D /* front.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = front.jpg; sourceTree = "<group>"; };
+		594BEA68156E2891008A7B4D /* left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = left.jpg; sourceTree = "<group>"; };
+		594BEA69156E2891008A7B4D /* right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = right.jpg; sourceTree = "<group>"; };
+		594BEA6A156E2891008A7B4D /* skybox.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skybox.jpg; sourceTree = "<group>"; };
+		594BEA6B156E2891008A7B4D /* top.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = top.jpg; sourceTree = "<group>"; };
+		594BEA6C156E2891008A7B4D /* underwater.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater.jpg; sourceTree = "<group>"; };
+		594BEA6E156E2BE9008A7B4D /* waterTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waterTexture.jpg; sourceTree = "<group>"; };
 		59881C2A156C98DB00BA719F /* texture_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_common.c; sourceTree = "<group>"; };
 		59881C2B156C98DB00BA719F /* texture_gdk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_gdk.c; sourceTree = "<group>"; };
 		59881C2C156C98DB00BA719F /* texture_quicktime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_quicktime.c; sourceTree = "<group>"; };
 		59881C2D156C98DB00BA719F /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
-		59881C34156C9C2900BA719F /* screen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = screen.c; sourceTree = "<group>"; };
-		59881C36156C9C3900BA719F /* screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = screen.h; sourceTree = "<group>"; };
+		59881C34156C9C2900BA719F /* skybox.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = skybox.c; sourceTree = "<group>"; };
+		59881C36156C9C3900BA719F /* skybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skybox.h; sourceTree = "<group>"; };
 		59966D59156A1C01005DF6BF /* seabed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = seabed.h; sourceTree = "<group>"; };
 		59966D5B156A1C33005DF6BF /* seabed.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = seabed.c; sourceTree = "<group>"; };
 		599BE7EB15635170003184D7 /* I3D Assignment 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "I3D Assignment 2"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,8 +103,16 @@
 		594BEA4F156CD06B008A7B4D /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				594BEA6E156E2BE9008A7B4D /* waterTexture.jpg */,
+				594BEA65156E2891008A7B4D /* back.jpg */,
+				594BEA66156E2891008A7B4D /* bottom.jpg */,
+				594BEA67156E2891008A7B4D /* front.jpg */,
+				594BEA68156E2891008A7B4D /* left.jpg */,
+				594BEA69156E2891008A7B4D /* right.jpg */,
+				594BEA6A156E2891008A7B4D /* skybox.jpg */,
+				594BEA6B156E2891008A7B4D /* top.jpg */,
+				594BEA6C156E2891008A7B4D /* underwater.jpg */,
 				594BEA50156CD06B008A7B4D /* testTexture.png */,
-				594BEA51156CD06B008A7B4D /* waterTexture.jpg */,
 			);
 			path = textures;
 			sourceTree = "<group>";
@@ -125,7 +141,6 @@
 				594BEA4E156CD06B008A7B4D /* png_loader.h */,
 				594BEA4F156CD06B008A7B4D /* textures */,
 				594BEA52156CD06B008A7B4D /* testTexture.png */,
-				594BEA53156CD06B008A7B4D /* waterTexture.jpg */,
 				59881C2A156C98DB00BA719F /* texture_common.c */,
 				59881C2B156C98DB00BA719F /* texture_gdk.c */,
 				59881C2C156C98DB00BA719F /* texture_quicktime.c */,
@@ -153,8 +168,9 @@
 				599BE7F115635170003184D7 /* I3D_Assignment_2.1 */,
 				59966D59156A1C01005DF6BF /* seabed.h */,
 				59966D5B156A1C33005DF6BF /* seabed.c */,
-				59881C34156C9C2900BA719F /* screen.c */,
-				59881C36156C9C3900BA719F /* screen.h */,
+				59881C34156C9C2900BA719F /* skybox.c */,
+				59881C36156C9C3900BA719F /* skybox.h */,
+				594BEA64156DEDF9008A7B4D /* main.h */,
 			);
 			path = "I3D Assignment 2";
 			sourceTree = "<group>";
@@ -230,7 +246,7 @@
 				59881C30156C98DB00BA719F /* texture_common.c in Sources */,
 				59881C31156C98DB00BA719F /* texture_gdk.c in Sources */,
 				59881C32156C98DB00BA719F /* texture_quicktime.c in Sources */,
-				59881C35156C9C2900BA719F /* screen.c in Sources */,
+				59881C35156C9C2900BA719F /* skybox.c in Sources */,
 				594BEA54156CD06B008A7B4D /* png_loader.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

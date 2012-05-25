@@ -23,5 +23,5 @@ Vec4f cVec4f(float x, float y, float z, float w)
 }
 
 float getDistanceDiff(Vec3f a, Vec3f b){
-	return sqrt(1);
+	return sqrt((pow((a.x - b.x),2)) + (pow((a.y - b.y),2)) + (pow((a.z - b.z),2)));
 }

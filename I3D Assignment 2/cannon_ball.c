@@ -15,7 +15,7 @@ void drawBall(CannonBall *ball){
 	glPushMatrix();
 	glTranslatef(ball->pos.x, ball->pos.y, ball->pos.z);
 	glRotatef(10.0f, 0, 1, 0); 
-	glutSolidSphere(RADIUS, SLICES, STACKS);
+	glutSolidSphere(ball->radius, SLICES, STACKS);
 	glPopMatrix();
 }
 

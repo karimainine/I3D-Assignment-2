@@ -9,11 +9,10 @@ extern "C" {
 #include "gl.h"
 
 #define GRAVITY (-9.8)
-#define RADIUS 1
 #define SLICES 15
 #define STACKS 15
 #define ANIMATION_TIME 0.0001
-#define INIT_FORCE 200
+#define INIT_FORCE 500
 	
 	/* The Grid struct is used to hold the grid of vertices representing
 	 the waves */
@@ -23,6 +22,7 @@ extern "C" {
 		Vec3f pos;
 		Vec3f v;
 		float previousTime;
+		float radius;
 		
 	} CannonBall;
 	

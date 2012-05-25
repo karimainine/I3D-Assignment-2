@@ -10,7 +10,11 @@ extern "C" {
 #include "cannon_ball.h"
 	
 #define MAX_CANNON_BALLS 50
-#define BOAT_RADIUS 10
+#define BOAT_RADIUS 4
+#define COLLISION_OFFSET 4
+#define BALL_RADIUS 0.5
+#define DAMAGE_FACTOR 10
+#define MAX_DAMAGE 50
 
 /* forward declare instead of #include "obj.h" */
 struct _OBJMesh;
@@ -36,6 +40,7 @@ typedef struct
 	int nBalls;
 	int currentBall;
 	CannonBall *balls;
+	int damage;
 	
 } Boat;
 
@@ -53,7 +58,11 @@ void drawMesh(OBJMesh *mesh);
 	void initBall(Boat* boat, bool left);
 	void drawAllBalls(Boat* boat);
 	void updateAllBalls(Boat* boat);
-
+	void ballHitBoat(CannonBall *ball, Boat *boat);
+	void ballsHitBoat(Boat *boat1, Boat *boat2);
+	bool boatDestroyed(Boat *boat);
+	bool boatsCollided(Boat *boat1, Boat *boat2);
+	
 #ifdef __cplusplus
 }
 #endif

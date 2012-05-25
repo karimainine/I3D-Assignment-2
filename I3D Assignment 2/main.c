@@ -179,14 +179,28 @@ void idle(void)
 	dt = (t2 - t1) / 1000.0;
 	t1 = t2;
 
-	updateGrid(&grid, dt);
-	updateBoat(&boat2, keys.up, keys.down, keys.left, keys.right, dt, &keys.boat2FireLeft, &keys.boat2FireRight);
-	updateAllBalls(&boat2);
-	
-	updateBoat(&boat1, keys.w, keys.s, keys.a, keys.d, dt, &keys.boat1FireLeft, &keys.boat1FireRight);
-	updateAllBalls(&boat1);
+	if(!gameOver){
+		updateGrid(&grid, dt);
+		updateBoat(&boat2, keys.up, keys.down, keys.left, keys.right, dt, &keys.boat2FireLeft, &keys.boat2FireRight);
+		updateAllBalls(&boat2);
+		ballsHitBoat(&boat1, &boat2);
+		
+		updateBoat(&boat1, keys.w, keys.s, keys.a, keys.d, dt, &keys.boat1FireLeft, &keys.boat1FireRight);
+		updateAllBalls(&boat1);
+		ballsHitBoat(&boat2, &boat1);
+		
+		checkCollision();
+	}
 
 	glutPostRedisplay();
+}
+
+void checkCollision(){
+	bool boats_collided = boatsCollided(&boat1, &boat2);
+	bool boat1Hit = boatDestroyed(&boat1);
+	bool boat2Hit = boatDestroyed(&boat2);
+	
+	gameOver = (boats_collided || boat1Hit || boat2Hit);
 }
 
 void mouseMove(int x, int y)
@@ -429,8 +443,8 @@ void init(void)
 	initLight(&nightLight, cVec4f(1, 1, -2, 0), cVec4f(0, 0, 0.2, 1), cVec4f(0, 0, 0.2, 1), cVec4f(1, 1, 1, 0), 128);
 
 	/* Load the boat1 */
-	initBoat(&boat1, "galleon.obj", cVec3f(0, 0.3, -40));
-	initBoat(&boat2, "galleon.obj", cVec3f(0, 0.3, 40));
+	initBoat(&boat1, "galleon.obj", cVec3f(0, 0.3, -25));
+	initBoat(&boat2, "galleon.obj", cVec3f(0, 0.3, 25));
 
 	/* Set appropriate defaults */
 	glEnable(GL_DEPTH_TEST);

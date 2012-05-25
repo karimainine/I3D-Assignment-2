@@ -26,6 +26,7 @@
    file given by the filename */
 void initBoat(Boat *boat, const char *meshFilename, Vec3f position)
 {
+	boat->damage = 0;
 	boat->radius = BOAT_RADIUS;
 	boat->pos = position;
 	boat->heading = 90; /* The gallon obj faces this direction initially */
@@ -73,6 +74,8 @@ void drawBoat(Boat *boat, float* ambient)
 
 	glTranslatef(boat->pos.x, boat->pos.y, boat->pos.z);
 	
+	if (controls.wireframe)
+		glutWireSphere(BOAT_RADIUS, 20, 20);
 	
 	if (controls.axes)
 		drawAxes(cVec3f(0, 0, 0), cVec3f(10, 10, 10));
@@ -162,6 +165,7 @@ void initBall(Boat *boat, bool left){
 	
 	if(boat->nBalls < MAX_CANNON_BALLS){
 		ball.pos = boat->pos;
+		ball.radius = BALL_RADIUS;
 		ball.previousTime = glutGet(GLUT_ELAPSED_TIME);
 		
 		if(left){
@@ -173,7 +177,7 @@ void initBall(Boat *boat, bool left){
 		ball.dir.y = cosf(ball.dir.z * M_PI/180.0);
 		
 		ball.v.x = ball.dir.x * INIT_FORCE;
-		ball.v.y = INIT_FORCE;
+		ball.v.y = INIT_FORCE/2;
 		ball.v.z = ball.dir.y * INIT_FORCE;
 		
 		boat->balls[boat->nBalls] = ball;
@@ -190,17 +194,42 @@ void drawAllBalls(Boat *boat){
 
 void updateAllBalls(Boat *boat){
 	int i;
+	CannonBall *ball;
 	for (i=0; i<boat->nBalls; i++){
-		updateBall(&(boat->balls[i]));
+		ball = &(boat->balls[i]);
+		if(ball->pos.y >= -10){
+			updateBall(ball);
+		}
 	}
 }
 
 bool boatsCollided(Boat *boat1, Boat *boat2){
 	float distance;
-	distance = getDistanceDiff(boat1->pos, boat1->pos);
-	if(distance < (boat1->radius + boat2->radius)){
+	distance = getDistanceDiff(boat1->pos, boat2->pos);
+	if(distance < ((boat1->radius + boat2->radius) - COLLISION_OFFSET)){
 		return true;
 	}
 	return false;
+}
+
+void ballHitBoat(CannonBall *ball, Boat *boat){
+	float distance;
+	distance = getDistanceDiff(boat->pos, ball->pos);
+	printf("Distance: %f\n", distance);
+	if(distance < ((boat->radius + ball->radius) - COLLISION_OFFSET)){
+		boat->damage += DAMAGE_FACTOR;
+		printf("\nBoat hit: %d\n", boat->damage);
+	}
+}
+
+void ballsHitBoat(Boat *boat1, Boat *boat2){
+	int i;
+	for (i=0; i<boat1->nBalls; i++){
+		ballHitBoat(&(boat1->balls[i]), boat2);
+	}
+}
+
+bool boatDestroyed(Boat *boat){
+	return (boat->damage >= MAX_DAMAGE);
 }
 

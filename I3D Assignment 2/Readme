@@ -1,30 +1,26 @@
-I3D Ass1 Sample Solution written by Jesse Archer
+I3D Assignment 2 - Karim Abulainine
 
-To compile on linux type:
+To clean the code before compiling:
+make clean
+
+To compile on linux/Mac type:
 make
 
-If you want to compile with optimisation flags, add the flag:
-opt=y
+Common keys:
 
-If you want co compile with debugging enable, add the flag:
-dbg=y
+Esc/Q : quit
 
-ie:
+W: Wireframe
+N: Normals
+L: Day/Night
+A: Axis
+E: Debug Mode (Main camera)
 
-make opt=y dbg=y
+Player 1 keys (left screen)
+w:a:s:d -> boat controls
+q:e -> left and right cannon balls
 
+Player 2 keys (right screen)
+arrows(up, down, left and right): boat controls
+".":","-> left and right cannon balls
 
-
-To compile on windows, use the vcxproj file provided with Visual Studio 2010 express edition
-
-
-The program expects the files boat.obj and boat.mtl to be in the same folder
-
-
-Use arrow keys to control the boat as well as the following keys:
-
-Esc/q : quit
-w : toggle wireframe mode
-n : toggle normal visualisation
-a : toggle axis rendering
-l : toggle light between day/night

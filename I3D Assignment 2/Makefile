@@ -10,13 +10,13 @@ TEXTURE_FILE = texture_gdk.c
 
 # Linux
 	ifeq ($(UNAME), Linux)
-	LDFLAGS = -lGL -lGLU -lglut -std=c99 -lm -lz
+	LDFLAGS = -lGL -lGLU -lglut -std=c99 -lm -lz `pkg-config gdk-pixbuf-2.0 --libs --cflags`
 endif
 
 # Windows (cygwin)
 ifeq ($(UNAME), Windows_NT)
 	EXE = $(EXE).exe
-	LDFLAGS = -lopengl32 -lglu32 -lglut32 -std=c99
+	LDFLAGS = -lopengl32 -lglu32 -lglut32 -std=c99 `pkg-config gdk-pixbuf-2.0 --libs`
 endif
 
 # OS X
@@ -24,8 +24,6 @@ ifeq ($(UNAME), Darwin)
 	TEXTURE_FILE = texture_quicktime.c
 	LDFLAGS = -framework Carbon -framework OpenGL -framework GLUT -std=c99 -m32 -framework QuickTime -lz
 endif
-
-all: clean $(EXE) run
 
 $(EXE) : main.c
 	gcc -o $@ $< $(LDFLAGS) $(TEXTURE_FILE) obj/obj.c boat.c camera.c controls.c keys.c light.c utils.c skybox.c waves.c texture_common.c seabed.c png_loader.c cannon_ball.c
@@ -35,3 +33,6 @@ clean:
 
 run:
 	./$(EXE)
+
+archive:
+	zip s3314713_i3d_Ass2.zip *.c *.h *.obj *.png textures/* obj/* Makefile Readme

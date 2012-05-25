@@ -313,7 +313,6 @@ void updateKey(int key, bool state)
 }
 
 void printFPS(float x, float y, float z){
-	int font=(int)GLUT_BITMAP_TIMES_ROMAN_24;
 	char s[1024];
 	frame++;
 	time = glutGet(GLUT_ELAPSED_TIME);
@@ -330,19 +329,18 @@ void printFPS(float x, float y, float z){
 	glColor3f(0.1f,0.1f,0.1f);
 	glPushMatrix();
 	glLoadIdentity();
-	renderBitmapString(x, y, z, (void *)font, s);
+	renderBitmapString(x, y, z, GLUT_BITMAP_TIMES_ROMAN_24, s);
 	glPopMatrix();
 }
 
 void printOnScreen(float x, float y, float z, char* s){
-	int font=(int)GLUT_BITMAP_TIMES_ROMAN_24;
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_LIGHTING);
 	glDisable(GL_BLEND);
 	glColor3f(1.0f,1.0f,1.0f);
 	glPushMatrix();
 	glLoadIdentity();
-	renderBitmapString(x, y, z, (void *)font,s);
+	renderBitmapString(x, y, z, GLUT_BITMAP_TIMES_ROMAN_24, s);
 	glPopMatrix();
 }
 

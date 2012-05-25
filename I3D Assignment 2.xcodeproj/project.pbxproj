@@ -47,10 +47,7 @@
 		594BEA4C156CD06B008A7B4D /* heightmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heightmap.png; sourceTree = "<group>"; };
 		594BEA4D156CD06B008A7B4D /* png_loader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = png_loader.c; sourceTree = "<group>"; };
 		594BEA4E156CD06B008A7B4D /* png_loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png_loader.h; sourceTree = "<group>"; };
-		594BEA50156CD06B008A7B4D /* testTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testTexture.png; sourceTree = "<group>"; };
 		594BEA51156CD06B008A7B4D /* waterTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waterTexture.jpg; sourceTree = "<group>"; };
-		594BEA52156CD06B008A7B4D /* testTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testTexture.png; path = textures/testTexture.png; sourceTree = "<group>"; };
-		594BEA53156CD06B008A7B4D /* waterTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waterTexture.jpg; path = textures/waterTexture.jpg; sourceTree = "<group>"; };
 		59881C2A156C98DB00BA719F /* texture_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_common.c; sourceTree = "<group>"; };
 		59881C2B156C98DB00BA719F /* texture_gdk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_gdk.c; sourceTree = "<group>"; };
 		59881C2C156C98DB00BA719F /* texture_quicktime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_quicktime.c; sourceTree = "<group>"; };
@@ -99,7 +96,6 @@
 		594BEA4F156CD06B008A7B4D /* textures */ = {
 			isa = PBXGroup;
 			children = (
-				594BEA50156CD06B008A7B4D /* testTexture.png */,
 				594BEA51156CD06B008A7B4D /* waterTexture.jpg */,
 			);
 			path = textures;
@@ -128,8 +124,6 @@
 				594BEA4D156CD06B008A7B4D /* png_loader.c */,
 				594BEA4E156CD06B008A7B4D /* png_loader.h */,
 				594BEA4F156CD06B008A7B4D /* textures */,
-				594BEA52156CD06B008A7B4D /* testTexture.png */,
-				594BEA53156CD06B008A7B4D /* waterTexture.jpg */,
 				59881C2A156C98DB00BA719F /* texture_common.c */,
 				59881C2B156C98DB00BA719F /* texture_gdk.c */,
 				59881C2C156C98DB00BA719F /* texture_quicktime.c */,

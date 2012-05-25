@@ -17,12 +17,16 @@ extern "C" {
 #include "seabed.h"
 #include "texture.h"
 #include "skybox.h"
+#include <string.h>
+#include <stdio.h>
 	
 	typedef struct
 	{
 		int x;	
 		int y;		
 	} Screen;
+	
+	
 	
 	void drawScene(void);
 	void drawLeftScreen(void);
@@ -40,6 +44,9 @@ extern "C" {
 	void keyboardSpecialDown(int key, int x, int y);
 	void keyboardSpecialUp(int key, int x, int y);
 	void init(void);
+	void renderBitmapString(float x, float y, float z, void *font, char *string);
+	void printFPS(float x, float y, float z);
+	void printGO(void);
 	
 #ifdef __cplusplus
 }

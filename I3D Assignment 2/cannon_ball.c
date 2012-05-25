@@ -32,5 +32,4 @@ void updateBall(CannonBall *ball){
 	ball->pos.z += ball->v.z*dt;
 	
 	ball->previousTime = now;
-	
 }

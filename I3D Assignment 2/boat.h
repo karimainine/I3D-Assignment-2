@@ -10,6 +10,7 @@ extern "C" {
 #include "cannon_ball.h"
 	
 #define MAX_CANNON_BALLS 50
+#define BOAT_RADIUS 10
 
 /* forward declare instead of #include "obj.h" */
 struct _OBJMesh;
@@ -17,6 +18,7 @@ struct _OBJMesh;
 /* Struct to hold the position, heading and mesh of the boat */
 typedef struct
 {
+	float radius;
 	Vec3f pos;			/* Position of the boat */
 	float heading;		/* The boat's heading, in degrees */
 	struct _OBJMesh *mesh;		/* The boat's mesh */

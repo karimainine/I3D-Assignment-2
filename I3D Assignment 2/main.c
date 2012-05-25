@@ -16,41 +16,51 @@ static GLuint waterTexture;
 static GLuint terrainTexture;
 Sky sky;
 
+bool gameOver;
+
+int frame=0, time, timebase=0;
+
 void drawScene(){
-	float ambient1 [] = { 45/255.0, 35/255.0, 33/255.0, 1.0f };
-	float ambient2 [] = { 191/255.0, 163/255.0, 141/255.0, 1.0f };
-	
-	if (controls.wireframe)
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	else
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-	
-	if (controls.axes)
-		drawAxes(cVec3f(0, 0, 0), cVec3f(10, 10, 10));
-	
-	if (controls.day)
-		setupLight(&dayLight);
-	else
-		setupLight(&nightLight);
-	
-	glBindTexture(GL_TEXTURE_2D, terrainTexture);
-	drawTerrain(&terrain);
-	
-	drawBoat(&boat1, ambient1);
-	drawAllBalls(&boat1);
-	
-	drawBoat(&boat2, ambient2);
-	drawAllBalls(&boat2);
-	
-	glBindTexture(GL_TEXTURE_2D, waterTexture);
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	drawGrid(&grid);
-	glDisable(GL_BLEND);
-	
-	if (controls.normals){
-		drawNormals(&grid, 1);
-		drawTerrainNormals(&terrain, 1);
+	if(gameOver){
+		printGO();
+	}else{
+		float ambient1 [] = { 45/255.0, 35/255.0, 33/255.0, 1.0f };
+		float ambient2 [] = { 191/255.0, 163/255.0, 141/255.0, 1.0f };
+		
+		if (controls.wireframe)
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		else
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+		
+		if (controls.axes)
+			drawAxes(cVec3f(0, 0, 0), cVec3f(10, 10, 10));
+		
+		if (controls.day)
+			setupLight(&dayLight);
+		else
+			setupLight(&nightLight);
+		
+		printFPS(-6, 6, -10);
+		
+		glBindTexture(GL_TEXTURE_2D, terrainTexture);
+		drawTerrain(&terrain);
+		
+		drawBoat(&boat1, ambient1);
+		drawAllBalls(&boat1);
+		
+		drawBoat(&boat2, ambient2);
+		drawAllBalls(&boat2);
+		
+		glBindTexture(GL_TEXTURE_2D, waterTexture);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		drawGrid(&grid);
+		glDisable(GL_BLEND);
+		
+		if (controls.normals){
+			drawNormals(&grid, 1);
+			drawTerrainNormals(&terrain, 1);
+		}	
 	}
 }
 
@@ -65,24 +75,11 @@ void drawLeftScreen(){
 		Vec3f pos;
 		
 		gluLookAt(boat1.pos.x, boat1.pos.y + 5.0, boat1.pos.z, boat2.pos.x, boat2.pos.y, boat2.pos.z, 0, 1, 0);
+		glPushMatrix();
+		glTranslatef(boat1.pos.x, boat1.pos.y + 5.0, boat1.pos.z);
+		drawSky(&sky);
+		glPopMatrix();
 		
-		//extract rotation only (remove translation)
-		//glGetFloatv(GL_MODELVIEW_MATRIX, modelview);
-		
-		/*pos.x = modelview[12];
-		pos.y = modelview[13];
-		pos.z = modelview[14];
-		
-		modelview[12] *= -1.0;
-		modelview[13] *= -1.0;
-		modelview[14] *= -1.0;*/
-		
-		/*for( int i=0; i<16; i++){
-			printf("%d - %f\n", i, modelview[i]);
-		}*/
-		
-		//draw sky using the new (x,y,z)
-		drawSky(&sky, &boat2);
 	}
 	else
 	{
@@ -100,16 +97,10 @@ void drawRightScreen(){
 	{
 		gluLookAt(boat2.pos.x, boat2.pos.y + 5.0, boat2.pos.z, boat1.pos.x, boat1.pos.y, boat1.pos.z, 0, 1, 0);
 		
-		//extract rotation only (remove translation)
-		/*float modelview[16];
-		Vec3f pos;
-		glGetFloatv(GL_MODELVIEW_MATRIX, modelview);
-		pos.x = - modelview[3];
-		pos.y = - modelview[7];
-		pos.z = - modelview[11];*/
-		
-		//draw sky using the new (x,y,z)
-		drawSky(&sky, &boat1);
+		glPushMatrix();
+		glTranslatef(boat2.pos.x, boat2.pos.y + 5.0, boat2.pos.z);
+		drawSky(&sky);
+		glPopMatrix();
 	}
 	else
 	{
@@ -275,6 +266,51 @@ void updateKey(int key, bool state)
 	}
 }
 
+void printFPS(float x, float y, float z){
+	int font=(int)GLUT_BITMAP_TIMES_ROMAN_24;
+	char s[1024];
+	frame++;
+	time = glutGet(GLUT_ELAPSED_TIME);
+	
+	static float fps;
+	if (time - timebase > 1000) {
+		fps = frame*1000.0/(time-timebase);
+		timebase = time;
+		frame = 0;
+	}
+	snprintf(s, 1024,"FPS:%4.2f", fps);
+	//printf("%s\n", s);
+	
+	glColor3f(0.1f,0.1f,0.1f);
+	glPushMatrix();
+	glLoadIdentity();
+	renderBitmapString(x, y, z, (void *)font, s);
+	glPopMatrix();
+}
+
+void printGO(){
+	int font=(int)GLUT_BITMAP_TIMES_ROMAN_24;
+	
+	glColor3f(0.1f,0.1f,0.1f);
+	glPushMatrix();
+	glLoadIdentity();
+	renderBitmapString(0, 0, -10,(void *)font,"Game Over");
+	glPopMatrix();
+}
+
+void renderBitmapString(float x, float y, float z, void *font, char *string){  
+	char *c;
+	//printf("FPS:%s\n", string);
+	glRasterPos3f(x, y, z);
+	//glTranslatef(x, y, z);
+	if(string){
+		for (c=string; *c != '\0'; c++) {
+			glutBitmapCharacter(font, *c);
+		}
+	}
+	
+}
+
 void keyboard(unsigned char key, int x, int y)
 {
 	switch (key)
@@ -373,9 +409,10 @@ void keyboardSpecialUp(int key, int x, int y)
 
 void init(void)
 {
+	gameOver = false;
 	initSky(&sky, 1);
 	/* Setup the terrain */
-	initTerrain(&terrain, 200, 200, 200, 40);
+	initTerrain(&terrain, 200, 200, 200, 20);
 	
 	/* Setup the camera in a default position */
 	initCamera(&camera);

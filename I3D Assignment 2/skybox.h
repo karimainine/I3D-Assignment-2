@@ -17,7 +17,7 @@ extern "C" {
 		float endZ;
 	}Sky;
 	
-	void drawSky(Sky*, Boat*);
+	void drawSky(Sky*);
 	void initSky(Sky*, int);
 	
 #ifdef __cplusplus

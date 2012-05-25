@@ -51,6 +51,8 @@ Vec3f cVec3f(float x, float y, float z);
 
 /* Constructor for a Vec4f struct */
 Vec4f cVec4f(float x, float y, float z, float w);
+	
+float getDistanceDiff(Vec3f, Vec3f);
 
 #ifdef __cplusplus
 }

@@ -26,6 +26,7 @@
    file given by the filename */
 void initBoat(Boat *boat, const char *meshFilename, Vec3f position)
 {
+	boat->radius = BOAT_RADIUS;
 	boat->pos = position;
 	boat->heading = 90; /* The gallon obj faces this direction initially */
 	boat->speed = 0;
@@ -192,5 +193,14 @@ void updateAllBalls(Boat *boat){
 	for (i=0; i<boat->nBalls; i++){
 		updateBall(&(boat->balls[i]));
 	}
+}
+
+bool boatsCollided(Boat *boat1, Boat *boat2){
+	float distance;
+	distance = getDistanceDiff(boat1->pos, boat1->pos);
+	if(distance < (boat1->radius + boat2->radius)){
+		return true;
+	}
+	return false;
 }
 

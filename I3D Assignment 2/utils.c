@@ -1,4 +1,5 @@
 #include "utils.h"
+#include <math.h>
 
 /* Constructor for a Vec3f struct */
 Vec3f cVec3f(float x, float y, float z)
@@ -19,4 +20,8 @@ Vec4f cVec4f(float x, float y, float z, float w)
 	v.z = z;
 	v.w = w;
 	return v;
+}
+
+float getDistanceDiff(Vec3f a, Vec3f b){
+	return sqrt(1);
 }

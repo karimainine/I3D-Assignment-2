@@ -215,10 +215,10 @@ bool boatsCollided(Boat *boat1, Boat *boat2){
 void ballHitBoat(CannonBall *ball, Boat *boat){
 	float distance;
 	distance = getDistanceDiff(boat->pos, ball->pos);
-	printf("Distance: %f\n", distance);
+	//printf("Distance: %f\n", distance);
 	if(distance < ((boat->radius + ball->radius) - COLLISION_OFFSET)){
 		boat->damage += DAMAGE_FACTOR;
-		printf("\nBoat hit: %d\n", boat->damage);
+		//printf("\nBoat hit: %d\n", boat->damage);
 	}
 }
 
@@ -231,5 +231,47 @@ void ballsHitBoat(Boat *boat1, Boat *boat2){
 
 bool boatDestroyed(Boat *boat){
 	return (boat->damage >= MAX_DAMAGE);
+}
+
+bool boatTerrainCollision(Terrain *terrain, Boat *boat){
+	float frontDistance, rightDistance, leftDistance;
+	int fi, fj, fIndex, ri, rj, rIndex, li, lj, lIndex;
+	int rows, cols;
+	Vec3f terrainFrontPos, terrainRightPos, terrainLeftPos;
+	
+	Vec3f boatPos = boat->pos;
+	Vec3f boatFrontPos = {boatPos.x, boatPos.y, boatPos.z + boat->radius};
+	Vec3f boatRightPos = {boatPos.x - boat->radius, boatPos.y, boatPos.z};
+	Vec3f boatLeftPos = {boatPos.x + boat->radius, boatPos.y, boatPos.z};
+	
+	rows = terrain->rows - 1;
+	cols = terrain->cols - 1;
+	
+	fi = ((boatFrontPos.x/terrain->size) + 0.5)*rows;
+	fj = ((boatFrontPos.z/terrain->size) + 0.5)*cols;
+	
+	fIndex = (fi*terrain->cols) + fj;
+	terrainFrontPos = terrain->vertices[fIndex];
+	
+	li = ((boatLeftPos.x/terrain->size) + 0.5)*rows;
+	lj = ((boatLeftPos.z/terrain->size) + 0.5)*cols;
+	
+	lIndex = (li*terrain->cols) + lj;
+	terrainLeftPos = terrain->vertices[lIndex];
+	
+	ri = ((boatRightPos.x/terrain->size) + 0.5)*rows;
+	rj = ((boatRightPos.z/terrain->size) + 0.5)*cols;
+	
+	rIndex = (ri*terrain->cols) + rj;
+	terrainRightPos = terrain->vertices[rIndex];
+	
+	frontDistance = getDistanceDiff(terrainFrontPos, boatFrontPos);
+	rightDistance = getDistanceDiff(terrainRightPos, boatRightPos);
+	leftDistance = getDistanceDiff(terrainLeftPos, boatLeftPos);
+		
+	if(frontDistance <= TERRAIN_COLLISION_OFFSET || rightDistance <= TERRAIN_COLLISION_OFFSET || leftDistance <= TERRAIN_COLLISION_OFFSET){
+		return true;
+	}
+	return false;
 }
 

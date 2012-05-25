@@ -199,8 +199,10 @@ void checkCollision(){
 	bool boats_collided = boatsCollided(&boat1, &boat2);
 	bool boat1Hit = boatDestroyed(&boat1);
 	bool boat2Hit = boatDestroyed(&boat2);
+	bool boat1Terrain = boatTerrainCollision(&terrain, &boat1);
+	bool boat2Terrain = boatTerrainCollision(&terrain, &boat2);
 	
-	gameOver = (boats_collided || boat1Hit || boat2Hit);
+	gameOver = (boats_collided || boat1Hit || boat2Hit || boat1Terrain || boat2Terrain);
 }
 
 void mouseMove(int x, int y)
@@ -426,7 +428,7 @@ void init(void)
 	gameOver = false;
 	initSky(&sky, 1);
 	/* Setup the terrain */
-	initTerrain(&terrain, 200, 200, 200, 20);
+	initTerrain(&terrain, 200, 200, 200, 40);
 	
 	/* Setup the camera in a default position */
 	initCamera(&camera);

@@ -57,8 +57,8 @@ void initTerrain(Terrain *terrain, int rows, int cols, float size, float height_
 			z = (z - 0.5) * size; /* range -.5 size to .5 size */
 			
 			//Y = (X-A)/(B-A) * (D-C) + C
-			new_i = (x - initial_x)/(last_x - initial_x) * terrainLoader->width;
-			new_j = (z - initial_z)/(last_z - initial_z) * terrainLoader->width;
+			new_i = ((x - initial_x)/(last_x - initial_x)) * terrainLoader->width;
+			new_j = ((z - initial_z)/(last_z - initial_z)) * terrainLoader->width;
 			new_index = (new_j*terrainLoader->width + new_i) * terrainLoader->channels;
 			y = (height_offset - 255) + terrainLoader->data[new_index];
 			

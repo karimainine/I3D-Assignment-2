@@ -19,7 +19,7 @@ extern "C" {
 		Vec3f *vertices;	/* 1d array of vertices */
 		Vec3f *normals;		/* 1d array of normal vectors, maps to
 									 locations of vertices */
-		int *indices;		/* 1d array of indices */
+		int *indices;	/* 1d array of indices */
 	} Terrain;
 	
 	/* Initialises a 2d grid of the given size, divided into the given

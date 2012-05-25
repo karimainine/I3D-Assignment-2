@@ -11,5 +11,9 @@ void initKeys(Keys *keys)
 	keys->a = false;
 	keys->s = false;
 	keys->d = false;
+	keys->boat1FireLeft = false;
+	keys->boat1FireRight = false;
+	keys->boat2FireLeft = false;
+	keys->boat2FireRight = false;
 }
 

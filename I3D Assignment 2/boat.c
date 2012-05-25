@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "boat.h"
 #include "controls.h"
@@ -35,7 +36,10 @@ void initBoat(Boat *boat, const char *meshFilename, Vec3f position)
 	boat->displacement = -0.4;
 	boat->roll = 0;
 	boat->pitch = 0;
-
+	
+	boat->nBalls = 0;
+	boat->balls = malloc(MAX_CANNON_BALLS * sizeof(CannonBall));
+	
 	boat->mesh = objMeshLoad(meshFilename);
 }
 
@@ -100,7 +104,7 @@ void drawBoat(Boat *boat, float* ambient)
 }
 
 /* Updates the boat's position based on movement flags */
-void updateBoat(Boat *boat, bool up, bool down, bool left, bool right, float dt)
+void updateBoat(Boat *boat, bool up, bool down, bool left, bool right, float dt, bool *fireleft, bool *fireright)
 {
 	Vec4f v;
 	Vec2f headingDir;
@@ -140,5 +144,55 @@ void updateBoat(Boat *boat, bool up, bool down, bool left, bool right, float dt)
 	boat->pos.y = v.w - boat->displacement;
 	boat->roll = asin(v.x) * 180.0 / M_PI;
 	boat->pitch = asin(v.z) * 180.0 / M_PI;
+	
+	if(*fireleft){
+		*fireleft = false;
+		initBall(boat, true);
+		printf("\nfire left\n");
+	}
+	
+	if(*fireright){
+		*fireright = false;
+		initBall(boat, false);
+		printf("\nfire right\n");
+	}
+}
+
+void initBall(Boat *boat, bool left){
+	CannonBall ball;
+	
+	if(boat->nBalls < MAX_CANNON_BALLS){
+		ball.pos = boat->pos;
+		ball.previousTime = glutGet(GLUT_ELAPSED_TIME);
+		
+		if(left){
+			ball.dir.z = boat->heading + 90;
+		}else{
+			ball.dir.z = boat->heading - 90;
+		}
+		ball.dir.x = sinf(ball.dir.z * M_PI/180.0);
+		ball.dir.y = cosf(ball.dir.z * M_PI/180.0);
+		
+		ball.v.x = ball.dir.x * INIT_FORCE;
+		ball.v.y = INIT_FORCE;
+		ball.v.x = ball.dir.z * INIT_FORCE;
+		
+		boat->balls[boat->nBalls] = ball;
+		boat->nBalls++;
+	}
+}
+
+void drawAllBalls(Boat *boat){
+	int i;
+	for (i=0; i<boat->nBalls; i++){
+		drawBall(&(boat->balls[i]));
+	}
+}
+
+void updateAllBalls(Boat *boat){
+	int i;
+	for (i=0; i<boat->nBalls; i++){
+		updateBall(&(boat->balls[i]));
+	}
 }
 

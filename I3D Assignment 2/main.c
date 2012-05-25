@@ -37,7 +37,10 @@ void drawScene(){
 	drawTerrain(&terrain);
 	
 	drawBoat(&boat1, ambient1);
+	drawAllBalls(&boat1);
+	
 	drawBoat(&boat2, ambient2);
+	drawAllBalls(&boat2);
 	
 	glBindTexture(GL_TEXTURE_2D, waterTexture);
 	glEnable(GL_BLEND);
@@ -186,8 +189,11 @@ void idle(void)
 	t1 = t2;
 
 	updateGrid(&grid, dt);
-	updateBoat(&boat2, keys.up, keys.down, keys.left, keys.right, dt);
-	updateBoat(&boat1, keys.w, keys.s, keys.a, keys.d, dt);
+	updateBoat(&boat2, keys.up, keys.down, keys.left, keys.right, dt, &keys.boat2FireLeft, &keys.boat2FireRight);
+	updateAllBalls(&boat2);
+	
+	updateBoat(&boat1, keys.w, keys.s, keys.a, keys.d, dt, &keys.boat1FireLeft, &keys.boat1FireRight);
+	updateAllBalls(&boat1);
 
 	glutPostRedisplay();
 }
@@ -247,7 +253,23 @@ void updateKey(int key, bool state)
 		case 'd':
 			keys.d = state;
 			break;
-			
+		
+		case 'q':
+			keys.boat1FireLeft = state;
+			break;
+		
+		case 'e':
+			keys.boat1FireRight = state;
+			break;
+		
+		case ',':
+			keys.boat2FireLeft = state;
+			break;
+		
+		case '.':
+			keys.boat2FireRight = state;
+			break;
+		
 		default:
 			break;
 	}
@@ -258,7 +280,7 @@ void keyboard(unsigned char key, int x, int y)
 	switch (key)
 	{
 		case 27:
-		case 'q':
+		case 'Q':
 			/* Exit if esc or q is pressed */
 			exit(0);
 
@@ -298,6 +320,10 @@ void keyboard(unsigned char key, int x, int y)
 		case 'a':
 		case 's':
 		case 'd':
+		case 'q':
+		case 'e':
+		case ',':
+		case '.':
 			updateKey(key, true);
 			break;
 
@@ -349,7 +375,7 @@ void init(void)
 {
 	initSky(&sky, 1);
 	/* Setup the terrain */
-	initTerrain(&terrain, 200, 200, 200, 20);
+	initTerrain(&terrain, 200, 200, 200, 5);
 	
 	/* Setup the camera in a default position */
 	initCamera(&camera);

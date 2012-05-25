@@ -19,6 +19,10 @@ typedef struct
 	bool s;
 	bool d;
 	bool w;
+	bool boat1FireLeft;
+	bool boat1FireRight;
+	bool boat2FireLeft;
+	bool boat2FireRight;
 } Keys;
 
 

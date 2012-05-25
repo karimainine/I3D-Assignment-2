@@ -7,6 +7,9 @@ extern "C" {
 
 #include "utils.h"
 #include "obj/obj.h"
+#include "cannon_ball.h"
+	
+#define MAX_CANNON_BALLS 50
 
 /* forward declare instead of #include "obj.h" */
 struct _OBJMesh;
@@ -28,6 +31,10 @@ typedef struct
 
 	float roll;			/* How much the boat has rotated from side to side, in degrees */
 	float pitch;        /* How much the boat has rotated up and down, in degrees */
+	int nBalls;
+	int currentBall;
+	CannonBall *balls;
+	
 } Boat;
 
 /* Initialises the given boat with default values, and loads the obj file given by the filename */
@@ -37,9 +44,13 @@ void initBoat(Boat *boat, const char *meshFilename, Vec3f);
 void drawBoat(Boat *boat, float*);
 
 /* Updates the boat's position based on movement flags */
-void updateBoat(Boat *boat, bool up, bool down, bool left, bool right, float dt);
+void updateBoat(Boat *boat, bool up, bool down, bool left, bool right, float dt, bool *fireleft, bool *fireright);
 	
 void drawMesh(OBJMesh *mesh);
+	
+	void initBall(Boat* boat, bool left);
+	void drawAllBalls(Boat* boat);
+	void updateAllBalls(Boat* boat);
 
 #ifdef __cplusplus
 }

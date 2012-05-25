@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5920E306156EA80D00B76AB3 /* cannon_ball.c in Sources */ = {isa = PBXBuildFile; fileRef = 5920E305156EA80C00B76AB3 /* cannon_ball.c */; };
 		594BEA54156CD06B008A7B4D /* png_loader.c in Sources */ = {isa = PBXBuildFile; fileRef = 594BEA4D156CD06B008A7B4D /* png_loader.c */; };
 		59881C30156C98DB00BA719F /* texture_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2A156C98DB00BA719F /* texture_common.c */; };
 		59881C31156C98DB00BA719F /* texture_gdk.c in Sources */ = {isa = PBXBuildFile; fileRef = 59881C2B156C98DB00BA719F /* texture_gdk.c */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		5920E302156E487500B76AB3 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		5920E304156EA7F900B76AB3 /* cannon_ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cannon_ball.h; sourceTree = "<group>"; };
+		5920E305156EA80C00B76AB3 /* cannon_ball.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cannon_ball.c; sourceTree = "<group>"; };
 		594BEA4C156CD06B008A7B4D /* heightmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heightmap.png; sourceTree = "<group>"; };
 		594BEA4D156CD06B008A7B4D /* png_loader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = png_loader.c; sourceTree = "<group>"; };
 		594BEA4E156CD06B008A7B4D /* png_loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png_loader.h; sourceTree = "<group>"; };
@@ -53,7 +56,7 @@
 		59881C2C156C98DB00BA719F /* texture_quicktime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_quicktime.c; sourceTree = "<group>"; };
 		59881C2D156C98DB00BA719F /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
 		59881C34156C9C2900BA719F /* skybox.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = skybox.c; sourceTree = "<group>"; };
-		59881C36156C9C3900BA719F /* skybox.h */ = {isa = PBXFileReference; fileEncoding = 4; path = skybox.h; sourceTree = "<group>"; };
+		59881C36156C9C3900BA719F /* skybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skybox.h; sourceTree = "<group>"; };
 		59966D59156A1C01005DF6BF /* seabed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = seabed.h; sourceTree = "<group>"; };
 		59966D5B156A1C33005DF6BF /* seabed.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = seabed.c; sourceTree = "<group>"; };
 		599BE7EB15635170003184D7 /* I3D Assignment 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "I3D Assignment 2"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +160,8 @@
 				59881C34156C9C2900BA719F /* skybox.c */,
 				59881C36156C9C3900BA719F /* skybox.h */,
 				5920E302156E487500B76AB3 /* main.h */,
+				5920E304156EA7F900B76AB3 /* cannon_ball.h */,
+				5920E305156EA80C00B76AB3 /* cannon_ball.c */,
 			);
 			path = "I3D Assignment 2";
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				59881C32156C98DB00BA719F /* texture_quicktime.c in Sources */,
 				59881C35156C9C2900BA719F /* skybox.c in Sources */,
 				594BEA54156CD06B008A7B4D /* png_loader.c in Sources */,
+				5920E306156EA80D00B76AB3 /* cannon_ball.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,6 +4,7 @@
 #include "seabed.h"
 #include "png_loader.h"
 #include "gl.h"
+#include "time.h"
 
 static Image* terrainLoader;
 
@@ -26,7 +27,7 @@ void initTerrain(Terrain *terrain, int rows, int cols, float size, float height_
 	int nIndices = (rows - 1) * (cols - 1) * 6;
 	
 	/* load terrain heightmap */
-	terrainLoader = load_png("heightmap.png");
+	terrainLoader = load_png("out.png");
 	
 	/* Allocate memory for the vertex/normal arrays and index
 	 array, this will be for drawing triangles */
@@ -237,4 +238,21 @@ void drawTerrainNormals(Terrain *terrain, float size)
 	
 	/* Return to original rendering state */
 	glPopAttrib();
+}
+
+float* generateNoise(int width, int height){
+	int i,j;
+	float * noise;
+	float random;
+	time_t seconds;
+	time(&seconds);
+	srand((unsigned int) seconds);
+
+	for (i=0; i<width; i++){
+		for (j=0; j<height; j++){
+			random = rand()%1;
+			noise[i*width+j] = 128.0f + (random*128.0f);
+		}
+	}
+	return noise;
 }

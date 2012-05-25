@@ -148,13 +148,11 @@ void updateBoat(Boat *boat, bool up, bool down, bool left, bool right, float dt,
 	if(*fireleft){
 		*fireleft = false;
 		initBall(boat, true);
-		printf("\nfire left\n");
 	}
 	
 	if(*fireright){
 		*fireright = false;
 		initBall(boat, false);
-		printf("\nfire right\n");
 	}
 }
 
@@ -175,7 +173,7 @@ void initBall(Boat *boat, bool left){
 		
 		ball.v.x = ball.dir.x * INIT_FORCE;
 		ball.v.y = INIT_FORCE;
-		ball.v.x = ball.dir.z * INIT_FORCE;
+		ball.v.z = ball.dir.y * INIT_FORCE;
 		
 		boat->balls[boat->nBalls] = ball;
 		boat->nBalls++;

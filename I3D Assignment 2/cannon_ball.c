@@ -25,7 +25,7 @@ void updateBall(CannonBall *ball){
 	
 	ball->v.x = ball->dir.x * INIT_FORCE;
 	ball->v.y += (dt*GRAVITY) * INIT_FORCE;
-	ball->v.z = ball->dir.z * INIT_FORCE;
+	ball->v.z = ball->dir.y * INIT_FORCE;
 	
 	ball->pos.x += ball->v.x*dt;
 	ball->pos.y += ball->v.y*dt;

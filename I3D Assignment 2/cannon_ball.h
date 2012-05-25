@@ -9,9 +9,9 @@ extern "C" {
 #include "gl.h"
 
 #define GRAVITY (-9.8)
-#define RADIUS 2
-#define SLICES 30
-#define STACKS 30
+#define RADIUS 1
+#define SLICES 15
+#define STACKS 15
 #define ANIMATION_TIME 0.0001
 #define INIT_FORCE 200
 	

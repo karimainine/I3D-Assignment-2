@@ -27,7 +27,7 @@ void initTerrain(Terrain *terrain, int rows, int cols, float size, float height_
 	int nIndices = (rows - 1) * (cols - 1) * 6;
 	
 	/* load terrain heightmap */
-	terrainLoader = load_png("out.png");
+	terrainLoader = load_png("heightmap.png");
 	
 	/* Allocate memory for the vertex/normal arrays and index
 	 array, this will be for drawing triangles */

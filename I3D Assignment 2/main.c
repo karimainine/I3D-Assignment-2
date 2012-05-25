@@ -17,8 +17,8 @@ static GLuint terrainTexture;
 Sky sky;
 
 void drawScene(){
-	float ambient1 [] = { 1.0f, 0.0f, 0.0f, 1.0f };
-	float ambient2 [] = { 0.0f, 1.0f, 0.0f, 1.0f };
+	float ambient1 [] = { 45/255.0, 35/255.0, 33/255.0, 1.0f };
+	float ambient2 [] = { 191/255.0, 163/255.0, 141/255.0, 1.0f };
 	
 	if (controls.wireframe)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -375,7 +375,7 @@ void init(void)
 {
 	initSky(&sky, 1);
 	/* Setup the terrain */
-	initTerrain(&terrain, 200, 200, 200, 5);
+	initTerrain(&terrain, 200, 200, 200, 40);
 	
 	/* Setup the camera in a default position */
 	initCamera(&camera);
@@ -412,8 +412,8 @@ void init(void)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	
 	/* load Textures */
-	waterTexture = texture_load("textures/waterTexture.jpg");
-	terrainTexture = texture_load("textures/underwater.jpg");
+	waterTexture = texture_load("textures/ocean.jpg");
+	terrainTexture = texture_load("textures/wetRocks.jpg");
 
 	reshape(640, 480);
 }

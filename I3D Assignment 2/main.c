@@ -17,51 +17,50 @@ static GLuint terrainTexture;
 Sky sky;
 
 bool gameOver;
+bool draw;
+bool playerOneWins;
 
 int frame=0, time, timebase=0;
 
 void drawScene(){
-	if(gameOver){
-		printGO();
-	}else{
-		float ambient1 [] = { 45/255.0, 35/255.0, 33/255.0, 1.0f };
-		float ambient2 [] = { 191/255.0, 163/255.0, 141/255.0, 1.0f };
-		
-		if (controls.wireframe)
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		else
-			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-		
-		if (controls.axes)
-			drawAxes(cVec3f(0, 0, 0), cVec3f(10, 10, 10));
-		
-		if (controls.day)
-			setupLight(&dayLight);
-		else
-			setupLight(&nightLight);
-		
-		printFPS(-6, 6, -10);
-		
-		glBindTexture(GL_TEXTURE_2D, terrainTexture);
-		drawTerrain(&terrain);
-		
-		drawBoat(&boat1, ambient1);
-		drawAllBalls(&boat1);
-		
-		drawBoat(&boat2, ambient2);
-		drawAllBalls(&boat2);
-		
-		glBindTexture(GL_TEXTURE_2D, waterTexture);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		drawGrid(&grid);
-		glDisable(GL_BLEND);
-		
-		if (controls.normals){
-			drawNormals(&grid, 1);
-			drawTerrainNormals(&terrain, 1);
-		}	
-	}
+	
+	float ambient1 [] = { 45/255.0, 35/255.0, 33/255.0, 1.0f };
+	float ambient2 [] = { 191/255.0, 163/255.0, 141/255.0, 1.0f };
+	
+	if (controls.wireframe)
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	else
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	
+	if (controls.axes)
+		drawAxes(cVec3f(0, 0, 0), cVec3f(10, 10, 10));
+	
+	if (controls.day)
+		setupLight(&dayLight);
+	else
+		setupLight(&nightLight);
+	
+	printFPS(-6, 6, -10);
+	
+	glBindTexture(GL_TEXTURE_2D, terrainTexture);
+	drawTerrain(&terrain);
+	
+	drawBoat(&boat1, ambient1);
+	drawAllBalls(&boat1);
+	
+	drawBoat(&boat2, ambient2);
+	drawAllBalls(&boat2);
+	
+	glBindTexture(GL_TEXTURE_2D, waterTexture);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	drawGrid(&grid);
+	glDisable(GL_BLEND);
+	
+	if (controls.normals){
+		drawNormals(&grid, 1);
+		drawTerrainNormals(&terrain, 1);
+	}	
 }
 
 void drawLeftScreen(){
@@ -69,23 +68,31 @@ void drawLeftScreen(){
 	glViewport(0, 0, screen.x/2, screen.y);
 	/* Clear previous projection (important, otherwise next step won't work) */
 	glLoadIdentity();
-	if (controls.mainCamera)
-	{
-		float modelview[16];
-		Vec3f pos;
-		
-		gluLookAt(boat1.pos.x, boat1.pos.y + 5.0, boat1.pos.z, boat2.pos.x, boat2.pos.y, boat2.pos.z, 0, 1, 0);
-		glPushMatrix();
-		glTranslatef(boat1.pos.x, boat1.pos.y + 5.0, boat1.pos.z);
-		drawSky(&sky);
-		glPopMatrix();
-		
+	if(gameOver){
+		printOnScreen(0, 0, -10, "Game Over");
+		if(draw){
+			printOnScreen(0, -5, -10, "Draw");
+		}else if(playerOneWins){
+			printOnScreen(0, -5, -10, "You Win!");
+		}else if(!playerOneWins){
+			printOnScreen(0, -5, -10, "You Lose!");
+		}
+	}else{
+		if (controls.mainCamera)
+		{
+			gluLookAt(boat1.pos.x, boat1.pos.y + 5.0, boat1.pos.z, boat2.pos.x, boat2.pos.y, boat2.pos.z, 0, 1, 0);
+			glPushMatrix();
+			glTranslatef(boat1.pos.x, boat1.pos.y + 5.0, boat1.pos.z);
+			drawSky(&sky);
+			glPopMatrix();
+			
+		}
+		else
+		{
+			setupCamera(&camera);
+		}
+		drawScene();
 	}
-	else
-	{
-		setupCamera(&camera);
-	}
-	drawScene();
 }
 
 void drawRightScreen(){
@@ -93,20 +100,31 @@ void drawRightScreen(){
 	glViewport(screen.x/2, 0, screen.x/2, screen.y);
 	/* Clear previous projection (important, otherwise next step won't work) */
 	glLoadIdentity();
-	if (controls.mainCamera)
-	{
-		gluLookAt(boat2.pos.x, boat2.pos.y + 5.0, boat2.pos.z, boat1.pos.x, boat1.pos.y, boat1.pos.z, 0, 1, 0);
-		
-		glPushMatrix();
-		glTranslatef(boat2.pos.x, boat2.pos.y + 5.0, boat2.pos.z);
-		drawSky(&sky);
-		glPopMatrix();
+	if(gameOver){
+		printOnScreen(0, 0, -10, "Game Over");
+		if(draw){
+			printOnScreen(0, -5, -10, "Draw");
+		}else if(playerOneWins){
+			printOnScreen(0, -5, -10, "You Lose!");
+		}else if(!playerOneWins){
+			printOnScreen(0, -5, -10, "You Win!");
+		}
+	}else{
+		if (controls.mainCamera)
+		{
+			gluLookAt(boat2.pos.x, boat2.pos.y + 5.0, boat2.pos.z, boat1.pos.x, boat1.pos.y, boat1.pos.z, 0, 1, 0);
+			
+			glPushMatrix();
+			glTranslatef(boat2.pos.x, boat2.pos.y + 5.0, boat2.pos.z);
+			drawSky(&sky);
+			glPopMatrix();
+		}
+		else
+		{
+			setupCamera(&camera);
+		}
+		drawScene();
 	}
-	else
-	{
-		setupCamera(&camera);
-	}
-	drawScene();
 }
 
 /* Draws a 3d axis at the given position, with the given length */
@@ -203,6 +221,18 @@ void checkCollision(){
 	bool boat2Terrain = boatTerrainCollision(&terrain, &boat2);
 	
 	gameOver = (boats_collided || boat1Hit || boat2Hit || boat1Terrain || boat2Terrain);
+	if(boats_collided){
+		draw = true;
+	}else{
+		draw = false;
+	}
+	
+	if(boat1Hit || boat1Terrain){
+		playerOneWins = false;
+	}
+	if(boat2Hit || boat2Terrain){
+		playerOneWins = true;
+	}
 }
 
 void mouseMove(int x, int y)
@@ -304,13 +334,15 @@ void printFPS(float x, float y, float z){
 	glPopMatrix();
 }
 
-void printGO(){
+void printOnScreen(float x, float y, float z, char* s){
 	int font=(int)GLUT_BITMAP_TIMES_ROMAN_24;
-	
-	glColor3f(0.1f,0.1f,0.1f);
+	glDisable(GL_DEPTH_TEST);
+	glDisable(GL_LIGHTING);
+	glDisable(GL_BLEND);
+	glColor3f(1.0f,1.0f,1.0f);
 	glPushMatrix();
 	glLoadIdentity();
-	renderBitmapString(0, 0, -10,(void *)font,"Game Over");
+	renderBitmapString(x, y, z, (void *)font,s);
 	glPopMatrix();
 }
 
@@ -426,6 +458,7 @@ void keyboardSpecialUp(int key, int x, int y)
 void init(void)
 {
 	gameOver = false;
+	playerOneWins = false;
 	initSky(&sky, 1);
 	/* Setup the terrain */
 	initTerrain(&terrain, 200, 200, 200, 40);
@@ -459,6 +492,7 @@ void init(void)
 	glEnable(GL_NORMALIZE);
 	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, 1);
 	glEnable(GL_TEXTURE_2D);
+	
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
@@ -467,8 +501,6 @@ void init(void)
 	/* load Textures */
 	waterTexture = texture_load("textures/ocean.jpg");
 	terrainTexture = texture_load("textures/wetRocks.jpg");
-
-	reshape(640, 480);
 }
 
 int main(int argc, char **argv)
@@ -476,7 +508,7 @@ int main(int argc, char **argv)
 	/* Init glut, create window */
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
-	glutCreateWindow("I3D Ass");
+	glutCreateWindow("I3D Assignment 2");
 
 	/* Set glut callbacks */
 	glutDisplayFunc(display);

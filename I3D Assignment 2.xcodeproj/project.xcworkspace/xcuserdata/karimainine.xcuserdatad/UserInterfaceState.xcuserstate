@@ -4842,9 +4842,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>359613838.31090301</real>
-		<string>{0, 960}</string>
-		<string>{408, 0}</string>
+		<real>359647091.44039798</real>
+		<string>{0, 1210}</string>
+		<string>{451, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4890,9 +4890,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>359628276.47530901</real>
-		<string>{131, 2248}</string>
-		<string>{1391, 0}</string>
+		<real>359649152.445894</real>
+		<string>{722, 2413}</string>
+		<string>{1174, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4986,8 +4986,8 @@
 				</dict>
 			</array>
 		</dict>
-		<real>359642824.52826399</real>
-		<string>{266, 2007}</string>
+		<real>359648890.35406601</real>
+		<string>{266, 1995}</string>
 		<string>{1912, 0}</string>
 		<dict>
 			<key>$class</key>
@@ -5225,9 +5225,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>359644340.56879002</real>
-		<string>{8833, 1809}</string>
-		<string>{8687, 0}</string>
+		<real>359648888.76746601</real>
+		<string>{8936, 1342}</string>
+		<string>{7510, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -5797,7 +5797,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>359645755.75949699</real>
+		<real>359646105.49838299</real>
 		<string>{5552, 1980}</string>
 		<string>{7493, 0}</string>
 		<dict>
@@ -6080,7 +6080,7 @@
 				<integer>499</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/boat.h</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/skybox.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6098,7 +6098,7 @@
 				<integer>501</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/boat.c</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/skybox.c</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6116,7 +6116,7 @@
 				<integer>503</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/main.h</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/seabed.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6134,7 +6134,7 @@
 				<integer>505</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/main.c</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/seabed.c</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6152,7 +6152,7 @@
 				<integer>507</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/seabed.h</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/main.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6170,7 +6170,7 @@
 				<integer>509</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/seabed.c</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/main.c</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6188,7 +6188,7 @@
 				<integer>511</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/Makefile</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/boat.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6206,7 +6206,7 @@
 				<integer>513</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/cannon_ball.h</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/boat.c</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6224,7 +6224,7 @@
 				<integer>515</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/cannon_ball.c</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/Makefile</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6242,7 +6242,7 @@
 				<integer>517</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/texture.h</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/cannon_ball.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6402,7 +6402,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>579</integer>
+					<integer>580</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -6410,11 +6410,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>587</integer>
+					<integer>588</integer>
 				</dict>
 			</array>
 		</dict>
-		<string>boat.c</string>
+		<string>skybox.c</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6551,11 +6551,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>544</integer>
+					<integer>545</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>555</integer>
+					<integer>556</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -6563,7 +6563,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>569</integer>
+					<integer>570</integer>
 				</dict>
 			</array>
 		</dict>
@@ -6634,7 +6634,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>539</integer>
+					<integer>540</integer>
 				</dict>
 			</array>
 		</dict>
@@ -6671,11 +6671,12 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>98</integer>
+					<integer>539</integer>
 				</dict>
 			</array>
 		</dict>
 		<string>I3D Assignment 2</string>
+		<string>skybox.c</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6686,15 +6687,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>540</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>542</integer>
+					<integer>541</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>543</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>544</integer>
 				</dict>
 			</array>
 		</dict>
@@ -6716,7 +6717,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>541</integer>
+					<integer>542</integer>
 				</dict>
 			</array>
 		</dict>
@@ -6763,10 +6764,6 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>545</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>546</integer>
 				</dict>
 				<dict>
@@ -6789,6 +6786,10 @@
 					<key>CF$UID</key>
 					<integer>551</integer>
 				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>552</integer>
+				</dict>
 			</array>
 			<key>NS.objects</key>
 			<array>
@@ -6810,15 +6811,15 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>552</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>553</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>554</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>555</integer>
 				</dict>
 			</array>
 		</dict>
@@ -6858,10 +6859,6 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>556</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>557</integer>
 				</dict>
 				<dict>
@@ -6884,6 +6881,10 @@
 					<key>CF$UID</key>
 					<integer>562</integer>
 				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>563</integer>
+				</dict>
 			</array>
 			<key>NS.objects</key>
 			<array>
@@ -6901,19 +6902,19 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>563</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>564</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>566</integer>
+					<integer>565</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>567</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>568</integer>
 				</dict>
 			</array>
 		</dict>
@@ -6929,7 +6930,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>565</integer>
+				<integer>566</integer>
 			</dict>
 			<key>NSRangeCount</key>
 			<integer>0</integer>
@@ -6948,7 +6949,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>568</integer>
+				<integer>569</integer>
 			</dict>
 			<key>NSRangeCount</key>
 			<integer>0</integer>
@@ -7016,23 +7017,15 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>570</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>571</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>575</integer>
+					<integer>572</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>576</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>25</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7045,6 +7038,14 @@
 				<dict>
 					<key>CF$UID</key>
 					<integer>578</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>25</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>579</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7059,15 +7060,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>572</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>573</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>574</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>575</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7127,7 +7128,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>580</integer>
+					<integer>581</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7141,15 +7142,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>581</integer>
+					<integer>582</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>583</integer>
+					<integer>584</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>585</integer>
+					<integer>586</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7178,7 +7179,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>582</integer>
+					<integer>583</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7208,7 +7209,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>584</integer>
+					<integer>585</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7238,7 +7239,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>586</integer>
+					<integer>587</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7281,7 +7282,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>588</integer>
+					<integer>589</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7296,11 +7297,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>589</integer>
+					<integer>590</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>613</integer>
+					<integer>614</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7312,15 +7313,15 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>628</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>634</integer>
+					<integer>629</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>635</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>636</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7346,7 +7347,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>590</integer>
+					<integer>591</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7367,7 +7368,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>591</integer>
+					<integer>592</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7396,7 +7397,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>592</integer>
+					<integer>593</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7404,7 +7405,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>611</integer>
+					<integer>612</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7418,7 +7419,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>593</integer>
+					<integer>594</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7467,19 +7468,19 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>594</integer>
+					<integer>595</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>604</integer>
+					<integer>605</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>608</integer>
+					<integer>609</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>598</integer>
+					<integer>599</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7487,7 +7488,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>609</integer>
+					<integer>610</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7500,17 +7501,17 @@
 			<key>DocumentLocation</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>602</integer>
+				<integer>603</integer>
 			</dict>
 			<key>DomainIdentifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>595</integer>
+				<integer>596</integer>
 			</dict>
 			<key>IdentifierPath</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>596</integer>
+				<integer>597</integer>
 			</dict>
 			<key>IndexOfDocumentIdentifier</key>
 			<dict>
@@ -7529,15 +7530,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>597</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>599</integer>
+					<integer>598</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>600</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>601</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7550,7 +7551,7 @@
 			<key>Identifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>598</integer>
+				<integer>599</integer>
 			</dict>
 		</dict>
 		<string>main.c</string>
@@ -7575,7 +7576,7 @@
 			<key>Identifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>601</integer>
+				<integer>602</integer>
 			</dict>
 		</dict>
 		<string>I3D Assignment 2</string>
@@ -7588,7 +7589,7 @@
 			<key>documentURL</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>603</integer>
+				<integer>604</integer>
 			</dict>
 			<key>timestamp</key>
 			<dict>
@@ -7634,11 +7635,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>605</integer>
+					<integer>606</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>606</integer>
+					<integer>607</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7646,7 +7647,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>607</integer>
+					<integer>608</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7668,7 +7669,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>610</integer>
+				<integer>611</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/main.c</string>
@@ -7682,7 +7683,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>612</integer>
+					<integer>613</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7728,11 +7729,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>614</integer>
+					<integer>615</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>615</integer>
+					<integer>616</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7740,11 +7741,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>621</integer>
+					<integer>622</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>627</integer>
+					<integer>628</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7786,7 +7787,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>616</integer>
+					<integer>617</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7800,11 +7801,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>617</integer>
+					<integer>618</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>619</integer>
+					<integer>620</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7833,7 +7834,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>618</integer>
+					<integer>619</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7863,7 +7864,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>620</integer>
+					<integer>621</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7885,7 +7886,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>622</integer>
+					<integer>623</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7899,11 +7900,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>623</integer>
+					<integer>624</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>625</integer>
+					<integer>626</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7932,7 +7933,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>624</integer>
+					<integer>625</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7962,7 +7963,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>626</integer>
+					<integer>627</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8005,7 +8006,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>629</integer>
+					<integer>630</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8019,11 +8020,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>630</integer>
+					<integer>631</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>632</integer>
+					<integer>633</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8052,7 +8053,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>631</integer>
+					<integer>632</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8082,7 +8083,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>633</integer>
+					<integer>634</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8108,7 +8109,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>636</integer>
+					<integer>637</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8119,11 +8120,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>637</integer>
+					<integer>638</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>638</integer>
+					<integer>639</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8139,7 +8140,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>639</integer>
+					<integer>640</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8150,11 +8151,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>640</integer>
+					<integer>641</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>664</integer>
+					<integer>665</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8184,7 +8185,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>641</integer>
+					<integer>642</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8192,7 +8193,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>662</integer>
+					<integer>663</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8206,7 +8207,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>642</integer>
+					<integer>643</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8251,19 +8252,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>643</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>644</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>654</integer>
+					<integer>645</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>658</integer>
+					<integer>655</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8271,11 +8268,15 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
+					<integer>660</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
 					<integer>145</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>660</integer>
+					<integer>661</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8289,7 +8290,7 @@
 			<key>DocumentLocation</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>652</integer>
+				<integer>653</integer>
 			</dict>
 			<key>DomainIdentifier</key>
 			<dict>
@@ -8299,7 +8300,7 @@
 			<key>IdentifierPath</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>645</integer>
+				<integer>646</integer>
 			</dict>
 			<key>IndexOfDocumentIdentifier</key>
 			<dict>
@@ -8317,11 +8318,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>646</integer>
+					<integer>647</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>649</integer>
+					<integer>650</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8332,22 +8333,22 @@
 				<integer>39</integer>
 			</dict>
 			<key>NS.keys</key>
-			<array>
-				<dict>
-					<key>CF$UID</key>
-					<integer>647</integer>
-				</dict>
-			</array>
-			<key>NS.objects</key>
 			<array>
 				<dict>
 					<key>CF$UID</key>
 					<integer>648</integer>
 				</dict>
 			</array>
+			<key>NS.objects</key>
+			<array>
+				<dict>
+					<key>CF$UID</key>
+					<integer>649</integer>
+				</dict>
+			</array>
 		</dict>
 		<string>navigableItem_name</string>
-		<string>boat.h</string>
+		<string>skybox.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8358,14 +8359,14 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>650</integer>
+					<integer>651</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>651</integer>
+					<integer>652</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8380,7 +8381,7 @@
 			<key>documentURL</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>653</integer>
+				<integer>654</integer>
 			</dict>
 			<key>timestamp</key>
 			<dict>
@@ -8395,7 +8396,7 @@
 				<integer>106</integer>
 			</dict>
 			<key>NS.string</key>
-			<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/boat.h</string>
+			<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/skybox.h</string>
 		</dict>
 		<dict>
 			<key>$class</key>
@@ -8426,11 +8427,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>655</integer>
+					<integer>656</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>656</integer>
+					<integer>657</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8438,15 +8439,15 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>657</integer>
+					<integer>658</integer>
 				</dict>
 			</array>
 		</dict>
-		<real>359645755.76168102</real>
-		<string>{0, 1707}</string>
-		<string>{250, 24}</string>
-		<string>boat.h</string>
-		<string>boat.h</string>
+		<real>359649152.44695199</real>
+		<string>{0, 315}</string>
+		<string>{300, 0}</string>
+		<string>skybox.h</string>
+		<string>skybox.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8461,10 +8462,10 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>661</integer>
+				<integer>662</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/boat.h</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/skybox.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8475,7 +8476,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>663</integer>
+					<integer>664</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8505,7 +8506,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>665</integer>
+					<integer>666</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8527,7 +8528,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>666</integer>
+					<integer>667</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8576,7 +8577,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>667</integer>
+					<integer>668</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8588,7 +8589,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>98</integer>
+					<integer>539</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8609,17 +8610,17 @@
 			<key>DocumentLocation</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>673</integer>
+				<integer>674</integer>
 			</dict>
 			<key>DomainIdentifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>595</integer>
+				<integer>596</integer>
 			</dict>
 			<key>IdentifierPath</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>668</integer>
+				<integer>669</integer>
 			</dict>
 			<key>IndexOfDocumentIdentifier</key>
 			<dict>
@@ -8637,15 +8638,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>669</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>670</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>671</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>672</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8658,7 +8659,7 @@
 			<key>Identifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>98</integer>
+				<integer>539</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -8682,7 +8683,7 @@
 			<key>Identifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>672</integer>
+				<integer>673</integer>
 			</dict>
 		</dict>
 		<string>I3D Assignment 2</string>
@@ -8695,22 +8696,13 @@
 			<key>documentURL</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>674</integer>
+				<integer>326</integer>
 			</dict>
 			<key>timestamp</key>
 			<dict>
 				<key>CF$UID</key>
 				<integer>0</integer>
 			</dict>
-		</dict>
-		<dict>
-			<key>$class</key>
-			<dict>
-				<key>CF$UID</key>
-				<integer>106</integer>
-			</dict>
-			<key>NS.string</key>
-			<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/boat.c</string>
 		</dict>
 		<dict>
 			<key>$class</key>
@@ -8757,10 +8749,10 @@
 				</dict>
 			</array>
 		</dict>
-		<real>359645755.76137203</real>
-		<string>{5552, 1980}</string>
-		<string>{7493, 0}</string>
-		<string>boatTerrainCollision()</string>
+		<real>359649152.446841</real>
+		<string>{722, 2413}</string>
+		<string>{1174, 0}</string>
+		<string>drawSky()</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8778,7 +8770,7 @@
 				<integer>681</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/boat.c</string>
+		<string>file://localhost/Users/karimainine/Documents/RMIT/Semester%20Two/Interactive%203D%20Animation%20and%20Graphics/I3D%20Assignment%202/I3D%20Assignment%202/skybox.c</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8851,12 +8843,12 @@
 			<key>DocumentLocation</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>673</integer>
+				<integer>674</integer>
 			</dict>
 			<key>DomainIdentifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>595</integer>
+				<integer>596</integer>
 			</dict>
 			<key>IdentifierPath</key>
 			<dict>
@@ -8900,7 +8892,7 @@
 			<key>Identifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>98</integer>
+				<integer>539</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -9047,7 +9039,7 @@
 			<key>DocumentLocation</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>652</integer>
+				<integer>653</integer>
 			</dict>
 			<key>DomainIdentifier</key>
 			<dict>
@@ -9093,7 +9085,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>647</integer>
+					<integer>648</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -9104,7 +9096,7 @@
 				</dict>
 			</array>
 		</dict>
-		<string>boat.h</string>
+		<string>skybox.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9115,14 +9107,14 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>650</integer>
+					<integer>651</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>651</integer>
+					<integer>652</integer>
 				</dict>
 			</array>
 		</dict>

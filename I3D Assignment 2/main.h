@@ -46,7 +46,7 @@ extern "C" {
 	void init(void);
 	void renderBitmapString(float x, float y, float z, void *font, char *string);
 	void printFPS(float x, float y, float z);
-	void printGO(void);
+	void printOnScreen(float x, float y, float z, char* s);
 	void checkCollision(void);
 	
 #ifdef __cplusplus

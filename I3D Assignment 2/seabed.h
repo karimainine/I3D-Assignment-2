@@ -36,6 +36,12 @@ extern "C" {
 	
 	Vec3f getCrossProduct(Vec3f vector1, Vec3f vector2);
 	
+	float linearInterpolate(float a, float b, float x);
+	float getNoise(int x, int y);
+	float smoothNoise(float x, float y);
+	float interpolateNoise(float x, float y);
+	float getPerlinNoise(float x, float y, int p, int o);
+	
 	/* Draws normal vectors of the grid as lines, for debugging
 	 purposes */
 	void drawTerrainNormals(Terrain *terrain, float size);

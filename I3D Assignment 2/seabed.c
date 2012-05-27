@@ -61,7 +61,7 @@ void initTerrain(Terrain *terrain, int rows, int cols, float size, float height_
 			new_j = ((z - initial_z)/(last_z - initial_z)) * terrainLoader->width;
 			new_index = (new_j*terrainLoader->width + new_i) * terrainLoader->channels;
 			y = (height_offset - 255) + terrainLoader->data[new_index];
-			
+			y += getPerlinNoise(x, z, 2, 4); // adding perlin noise
 			vertices[index].x = x;
 			vertices[index].y = y;
 			vertices[index].z = z;
@@ -240,19 +240,53 @@ void drawTerrainNormals(Terrain *terrain, float size)
 	glPopAttrib();
 }
 
-float* generateNoise(int width, int height){
-	int i,j;
-	float * noise;
-	float random;
-	time_t seconds;
-	time(&seconds);
-	srand((unsigned int) seconds);
-
-	for (i=0; i<width; i++){
-		for (j=0; j<height; j++){
-			random = rand()%1;
-			noise[i*width+j] = 128.0f + (random*128.0f);
-		}
-	}
-	return noise;
+float getNoise(int x, int y){
+	int n;
+	n = x + y * 57;
+	n = (n<<13) ^ n;
+	return ( 1.0 - ( (n * (n * n * 15731 + 789221) + 1376312589) & 0x7fffffff) / 1073741824.0);    
 }
+
+float smoothNoise(float x, float y){
+	float corners, sides, center;
+	corners = ( getNoise(x-1, y-1)+ getNoise(x+1, y-1)+ getNoise(x-1, y+1) + getNoise(x+1, y+1) ) / 16;
+	sides   = ( getNoise(x-1, y) + getNoise(x+1, y) + getNoise(x, y-1) + getNoise(x, y+1) ) /  8;
+	center  = getNoise(x, y) / 4;
+	return corners + sides + center;
+}
+
+float linearInterpolate(float a, float b, float x){
+	return  a*(1-x) + b*x;
+}
+
+float interpolateNoise(float x, float y){
+	int int_x = (int) x;
+	int int_y = (int) y;
+	float fract_x = x - int_x;
+	float fract_y = y - int_y;
+	
+	float v1 = smoothNoise((float) int_x, (float) int_y);
+	float v2 = smoothNoise((float) int_x + 1.0, (float) int_y);
+	float v3 = smoothNoise((float) int_x, (float) int_y + 1.0);
+	float v4 = smoothNoise((float) int_x + 1.0, (float) int_y + 1.0);
+	
+	float i1 = linearInterpolate(v1, v2, fract_x);
+	float i2 = linearInterpolate(v3, v4, fract_x);
+	
+	return linearInterpolate(i1, i2, fract_y);
+}
+
+float getPerlinNoise(float x, float y, int p, int o){
+	float total = 0, frequency, amplitute;
+	int i=0;
+	
+	for(i=0; i<o-1; i++){
+		frequency = powf(2, i);
+		amplitute = powf(p, i);
+		
+		total += (interpolateNoise(x*frequency, y*frequency)*amplitute);
+	}
+	return total;
+}
+
+
